@@ -13,7 +13,12 @@ const Container: React.FC<ContainerProps> = ({
   ...props
 }) => {
   return (
-    <div className={`max_width ${className}`} id={id} style={style} {...props}>
+    <div
+      className={`w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 ${className}`}
+      id={id}
+      style={style}
+      {...props}
+    >
       {children}
     </div>
   );
