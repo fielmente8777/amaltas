@@ -65,7 +65,7 @@ export const Gallery: React.FC = () => {
                 spaceBetween: 0,
               },
               1024: {
-                slidesPerView: 1.7,
+                slidesPerView: 2.5,
                 spaceBetween: 0,
               },
             }}
