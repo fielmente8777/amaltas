@@ -8,7 +8,7 @@ export const landingPageData = {
     title: "<span class=\"font-bold\">Leave the city behind.</span><br/><span class=\"font-normal\">Let the </span><span class=\"italic font-light\">forest</span><span class=\"font-normal\"> set the pace.</span>",
     description: "A boutique villa on Dhela Road, built for a slower, more personal Corbett.",
     benefits: "Save 15% when you book direct · Free cancellation on most dates*",
-    images: ["/banner-image.png", "/Bijrani Room.png", "/durgadevi-room.png"],
+    images: ["/banner/image1.jpg", "/banner/image2.jpg", "/banner/image3.jpg", "/banner/image4.jpg"],
   },
   step: [
     { title: "FOREST VIEWS" },
@@ -28,8 +28,8 @@ export const landingPageData = {
   },
   accommodation: {
     tag: "ONE ACCOMMODATION",
-    heading: "Six Rooms, Each Named For The Forest It Faces.",
-    subtext: "A compact inventory on purpose, fewer guests, more attention, and rooms that stay quiet.",
+    heading: "Six Rooms, Each Named For<br />The Forest It Faces.",
+    subtext: "A compact inventory on purpose, fewer guests, more<br class=\"hidden lg:inline\" /> attention, and rooms that stay quiet.",
     rooms: [
       {
         id: "room-01",
@@ -37,8 +37,13 @@ export const landingPageData = {
         title: "Bijrani Room",
         description: "A quiet room that opens onto its own balcony, morning tea with birdsong, evenings with the forest going dark.",
         features: ["King bed", "Private balcony", "Forest side"],
-        image: "/Bijrani Room.png",
-        images: ["/Bijrani Room.png", "/durgadevi-room.png", "/banner-image.png", "/experience1.png"],
+        image: "/rooms/b-room1.jpg",
+        images: [
+          "/rooms/b-room1.jpg",
+          "/rooms/b-room2.jpg",
+          "/rooms/b-room3.jpg",
+          "/rooms/b-room4.jpg",
+        ],
       },
       {
         id: "room-02",
@@ -46,8 +51,12 @@ export const landingPageData = {
         title: "Durgadevi Room",
         description: "Named for the zone beyond the river. One wide window frames the jungle, no screen competes with it.",
         features: ["King bed", "Jungle-facing window", "Reading corner"],
-        image: "/durgadevi-room.png",
-        images: ["/durgadevi-room.png", "/Bijrani Room.png", "/experience2.png", "/banner-image.png"],
+        image: "/rooms/du-room1.jpg",
+        images: [
+          "/rooms/du-room1.jpg",
+          "/rooms/du-room2.jpg",
+          "/rooms/du-room3.jpg",
+        ],
       },
       {
         id: "room-03",
@@ -55,8 +64,13 @@ export const landingPageData = {
         title: "Dhikala Room",
         description: "Expansive suite with panoramic views of the sal forest. Designed for peaceful retreats and slow mornings.",
         features: ["King bed", "Forest deck", "Panoramic view"],
-        image: "/Bijrani Room.png",
-        images: ["/Bijrani Room.png", "/experience3.png", "/durgadevi-room.png", "/banner-image.png"],
+        image: "/rooms/d-room1.jpg",
+        images: [
+          "/rooms/d-room1.jpg",
+          "/rooms/d-room2.jpg",
+          "/rooms/d-room3.jpg",
+          "/rooms/d-room4.jpg",
+        ],
       },
       {
         id: "room-04",
@@ -64,8 +78,11 @@ export const landingPageData = {
         title: "Sitabani Room",
         description: "Framed by ancient forest canopy, a peaceful sanctuary with natural light and serene atmosphere.",
         features: ["King bed", "Canopy view", "Lounge seating"],
-        image: "/durgadevi-room.png",
-        images: ["/durgadevi-room.png", "/experience4.png", "/Bijrani Room.png", "/banner-image.png"],
+        image: "/rooms/s-room1.jpeg",
+        images: [
+          "/rooms/s-room1.jpeg",
+          "/rooms/s-room2.jpeg",
+        ],
       },
       {
         id: "room-05",
@@ -73,8 +90,11 @@ export const landingPageData = {
         title: "Jhirna Room",
         description: "Ground-level suite opening directly onto lush private garden space, ideal for quiet reading and tea.",
         features: ["King bed", "Garden patio", "Private entrance"],
-        image: "/Bijrani Room.png",
-        images: ["/Bijrani Room.png", "/banner-image.png", "/experience1.png", "/durgadevi-room.png"],
+        image: "/rooms/j-room1.jpeg",
+        images: [
+          "/rooms/j-room1.jpeg",
+          "/rooms/j-room2.jpeg",
+        ],
       },
     ],
   },
@@ -99,35 +119,27 @@ export const landingPageData = {
         image: "/experience4.png",
       },
       {
-        title: "Bird Watching",
-        image: "/banner-image.png",
-      },
-      {
-        title: "Stargazing Nights",
+        title: "Couple's Escape",
         image: "/experience3.png",
       },
       {
-        title: "Riverside Picnics",
-        image: "/experience2.png",
-      },
-      {
-        title: "Nature Trails",
-        image: "/experience1.png",
+        title: "Local Corbett",
+        image: "/experience3.png",
       },
     ],
   },
   dining: {
     tag: "DINING",
-    heading: "Meals Worth Slowing Down For",
-    image: "/dining.png",
+    heading: "Meals Worth Slowing<br />Down For",
+    image: "/dining-image.jpg",
     items: [
       {
         title: "Wild Breakfast",
-        description: "Breakfast served among the greenery, natural sounds included.",
+        description: "Breakfast served among the greenery, natural sounds<br class=\"hidden lg:inline\" /> included.",
       },
       {
         title: "The Dining Room",
-        description: "Twelve seats, one long table, Kumaoni-leaning home cooking.",
+        description: "Twelve seats, one long table, Kumaoni-leaning home<br class=\"hidden lg:inline\" /> cooking.",
       },
       {
         title: "Couple's Private Dining",
@@ -135,7 +147,7 @@ export const landingPageData = {
       },
       {
         title: "Bonfire Dinners",
-        description: "Winter evenings around the fire, dinner courses at bonfire pace.",
+        description: "Winter evenings around the fire, dinner courses at bonfire<br class=\"hidden lg:inline\" /> pace.",
       },
     ],
   },
@@ -144,10 +156,14 @@ export const landingPageData = {
     heading: "A Glimpse Of Amaltas",
     subtext: "Every space, moment and detail, captured.",
     images: [
-      "/banner-image.png",
-      "/Bijrani Room.png",
-      "/durgadevi-room.png",
-      "/banner-image.png",
+      "/gallery/gallery-s1.jpg",
+      "/gallery/gallery-s2.jpg",
+      "/gallery/gallery-s3.jpg",
+      "/gallery/gallery-s4.jpg",
+      "/gallery/gallery-s5.jpg",
+      "/gallery/gallery-s3.jpg",
+      "/gallery/gallery-s4.jpg",
+      "/gallery/gallery-s5.jpg",
     ],
   },
   location: {
@@ -161,11 +177,15 @@ export const landingPageData = {
       { place: "Pantnagar airport", distance: "≈ 80 km" },
       { place: "Delhi", distance: "≈ 250 km · 5.5 hrs" },
     ],
-    videoPlaceholder: "/banner-image.png",
+    video: {
+      src: "/location-video.mp4",
+      poster: "/gallery/gallery-s1.jpg",
+    },
+    videoPlaceholder: "/gallery/gallery-s1.jpg",
   },
   faqs: {
     tag: "BEFORE YOU BOOK",
-    heading: "Questions Guests Ask Us Most!",
+    heading: "Questions Guests Ask Us<br />Most!",
     items: [
       {
         q: "Where exactly is The Amaltas Villa?",

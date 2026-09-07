@@ -10,17 +10,17 @@ export const LandingFooter: React.FC = () => {
   return (
     <footer className="w-full font-sans">
       {/* Dark Green Booking Form Banner Strip Above Footer */}
-      <div id="booking-form" className="w-full bg-[#30402A] py-10 md:py-16 px-4 sm:px-6 md:px-12 border-b border-[#B58A4A]/30">
-        <div className="max-w-6xl mx-auto text-center space-y-4 sm:space-y-6">
-          <h2 className="heading-h2 font-varela text-xl sm:text-3xl lg:text-4xl text-white leading-tight max-w-4xl mx-auto">
+      <div id="booking-form" className="w-full bg-[#30402A] py-8 sm:py-10 md:py-16 px-4 sm:px-6 md:px-12 border-b border-[#B58A4A]/30">
+        <div className="max-w-6xl mx-auto text-center space-y-3 sm:space-y-6">
+          <h2 className="heading-h2 font-varela text-lg sm:text-3xl lg:text-4xl text-white leading-tight max-w-4xl mx-auto">
             An Intimate Forest Escape At The Heart Of<br className="hidden sm:inline" /> The Corbett Experience
           </h2>
 
-          <div className="max-w-6xl mx-auto pt-2">
+          <div className="max-w-6xl mx-auto pt-1 sm:pt-2">
             <Form1 />
           </div>
 
-          <p className="text-[11px] sm:text-xs text-[#EEEEDC]/70 pt-1 sm:pt-2 font-sans tracking-wide">
+          <p className="text-xs sm:text-[14px] text-white pt-0.5 sm:pt-2 font-sans tracking-wide">
             Save 15% when you book direct · Free cancellation on most dates*
           </p>
         </div>
@@ -28,7 +28,7 @@ export const LandingFooter: React.FC = () => {
 
       {/* Main Footer Info (Height: Hug 294px, Width: 1440px max, Background: #EEEEDC) */}
       <div className="w-full bg-[#EEEEDC] border-t border-[#D6D2C7]">
-        <div className="max-w-[1440px] mx-auto py-10 md:py-12 px-4 sm:px-6 md:px-16 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 font-sans">
+        <div className="max-w-[1440px] mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-16 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 font-sans">
           {/* Column 1: Logo (Width: 149px, Height: 160px) */}
           <div className="flex items-center">
             <div className="relative w-[120px] h-[130px] sm:w-[149px] sm:h-[160px] shrink-0">
@@ -51,8 +51,7 @@ export const LandingFooter: React.FC = () => {
                 <LocationPinIcon />
               </span>
               <p className="leading-relaxed">
-                Himmatpur Dotiyal, Dhela Road,<br />
-                Ramnagar, Jim Corbett, Uttarakhand
+                {landingPageData.contact.location}
               </p>
             </div>
           </div>

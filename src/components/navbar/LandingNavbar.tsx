@@ -26,13 +26,27 @@ const LandingNavbar = () => {
           />
         </div>
 
-        {/* BOOK STAY CTA */}
-        <LinkButton
-          href="#form"
-          label="Book Now"
-          calendarIcon
-          className="flex flex-row items-center justify-center w-[115px] sm:w-[130px] h-[38px] sm:h-[44px] gap-2 sm:gap-[12px] rounded-lg uppercase bg-[#30402A] text-white border border-[#30402A] px-0 hover:bg-[#243120] transition-colors text-[11px] sm:text-xs font-semibold tracking-wider"
-        />
+        {/* Mobile Book Now CTA (Only visible on mobile screens < 768px) */}
+        <div className="block md:hidden">
+          <LinkButton
+            href="#form"
+            label="Book Now"
+            calendarIcon
+            className="flex flex-row items-center justify-center w-[105px] h-[34px] gap-1.5 rounded-[4px] uppercase bg-[#30402A] text-white border border-[#30402A] px-2.5 hover:bg-[#243120] transition-colors text-[11px] font-semibold tracking-wider whitespace-nowrap shrink-0 shadow-sm [&>span>svg]:w-3 [&>span>svg]:h-3"
+            labelClass="whitespace-nowrap text-[11px]"
+          />
+        </div>
+
+        {/* Desktop Book Now CTA (100% Untouched - only visible on md: and above) */}
+        <div className="hidden md:block">
+          <LinkButton
+            href="#form"
+            label="Book Now"
+            calendarIcon
+            className="flex flex-row items-center justify-center w-[130px] h-[44px] gap-[12px] rounded-lg uppercase bg-[#30402A] text-white border border-[#30402A] px-3.5 hover:bg-[#243120] transition-colors text-[14px] font-semibold tracking-wider whitespace-nowrap shrink-0 shadow-md"
+            labelClass="whitespace-nowrap text-[14px]"
+          />
+        </div>
       </div>
     </header>
   );

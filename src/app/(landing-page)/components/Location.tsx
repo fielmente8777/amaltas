@@ -4,7 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
-import { LocationPinIcon, VideoPlayIcon, WhatsAppIcon } from "@/src/utils/icons";
+import { LocationPinIcon, WhatsAppIcon } from "@/src/utils/icons";
+import LazyLoadedVideo from "@/src/components/Video/LazyLoadedVideo";
 
 export const Location: React.FC = () => {
   const openWhatsApp = () => {
@@ -20,20 +21,32 @@ export const Location: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
-      <div className="max-w-[1320px] mx-auto space-y-8 md:space-y-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-          {/* Left Side: Address & Distance Table */}
-          <div className="lg:col-span-6 space-y-4 sm:space-y-6">
-            <p className="text-xs uppercase tracking-widest text-[#B58A4A] font-semibold font-varela">
-              {landingPageData.location.tag}
-            </p>
+    <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
+      <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-10">
+        {/* Mobile Header (visible on < lg) */}
+        <div className="block lg:hidden space-y-2 sm:space-y-3 text-left">
+          <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
+            {landingPageData.location.tag}
+          </p>
+          <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight">
+            {landingPageData.location.heading}
+          </h2>
+        </div>
 
-            <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight">
-              Close To The Gate, Far From The<br />Noise.
-            </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-center">
+          {/* Left Side: Desktop Header + Address & Distance Table */}
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-3 sm:space-y-6">
+            <div className="hidden lg:block space-y-3 sm:space-y-6">
+              <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
+                {landingPageData.location.tag}
+              </p>
 
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-[#6B635E] font-sans">
+              <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight">
+                {landingPageData.location.heading}
+              </h2>
+            </div>
+
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-[#6B635E] font-sans pt-1 lg:pt-0">
               <span className="shrink-0"><LocationPinIcon /></span>
               <p>{landingPageData.location.address}</p>
             </div>
@@ -41,7 +54,7 @@ export const Location: React.FC = () => {
             {/* Distance Matrix Table (No Icons, Clean Horizontal Border Dividers) */}
             <div className="border-y divide-y border-[#D6D2C7] divide-[#D6D2C7] text-xs sm:text-sm font-sans">
               {landingPageData.location.matrix.map((row, idx) => (
-                <div key={idx} className="flex items-center justify-between py-3 sm:py-3.5">
+                <div key={idx} className="flex items-center justify-between py-2 sm:py-3.5">
                   <span className="text-[#6B635E] font-normal">{row.place}</span>
                   <span className="text-[#30402A] font-medium">{row.distance}</span>
                 </div>
@@ -49,45 +62,31 @@ export const Location: React.FC = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2 font-sans">
+            <div className="flex flex-row items-center gap-[12px] pt-1 sm:pt-2 font-open-sans">
               <button
                 onClick={openWhatsApp}
-                className="flex items-center gap-2 bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-5 sm:px-6 py-2.5 sm:py-3 rounded text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-sm"
+                className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
               >
-                <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#30402A]" />
+                <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
                 Enquire Now
               </button>
 
               <button
                 onClick={scrollToForm}
-                className="flex items-center gap-2 bg-[#30402A] hover:bg-[#243120] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-md"
+                className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
               >
-                <FaCalendarAlt className="text-white text-sm" />
+                <FaCalendarAlt className="text-white text-xs" />
                 Book Now
               </button>
             </div>
           </div>
 
-          {/* Right Side: Image Showcase with 80x80 Video Play Button Overlay (648px x 600px, 8px radius) */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[648px] h-[260px] sm:h-[420px] lg:h-[600px] rounded-[8px] overflow-hidden shadow-lg border border-[#D6D2C7] group">
-              <Image
-                src={landingPageData.location.videoPlaceholder}
-                alt="Amaltas Exterior View"
-                fill
-                className="object-cover"
+          {/* Right Side / Mobile Top: Optimized Lazy Loaded Video (648px x 600px, 8px radius) */}
+          <div className="order-1 lg:order-2 lg:col-span-6 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[648px] h-[240px] sm:h-[420px] lg:h-[600px] rounded-[8px] overflow-hidden shadow-lg border border-[#D6D2C7]">
+              <LazyLoadedVideo
+                src={landingPageData.location.video?.src || "/location-video.mp4"}
               />
-
-              {/* OVERLAY PLAY BUTTON SVG (80x80) */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                <button
-                  onClick={openWhatsApp}
-                  aria-label="Play Tour Video"
-                  className="transition-transform hover:scale-110 active:scale-95 cursor-pointer drop-shadow-2xl scale-75 sm:scale-100"
-                >
-                  <VideoPlayIcon />
-                </button>
-              </div>
             </div>
           </div>
         </div>

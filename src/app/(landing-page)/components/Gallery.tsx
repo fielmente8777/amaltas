@@ -4,24 +4,21 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
-import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
+import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon } from "@/src/utils/icons";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { WhatsAppIcon } from "@/src/utils/icons";
 
-const galleryImages = [
-  "/banner-image.png",
-  "/Bijrani Room.png",
-  "/durgadevi-room.png",
-  "/banner-image.png",
-  "/Bijrani Room.png",
-  "/durgadevi-room.png",
-  "/banner-image.png",
-  "/Bijrani Room.png",
-];
+// Swiper styles
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 export const Gallery: React.FC = () => {
-  const [swiperRef, setSwiperRef] = useState<SwiperType | null>(null);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+
+  const images = landingPageData.gallery.images;
 
   const openWhatsApp = () => {
     window.open(
@@ -36,11 +33,11 @@ export const Gallery: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-12 md:py-24 px-4 sm:px-6 border-b border-[#D6D2C7] overflow-hidden">
-      <div className="max-w-[1128px] mx-auto space-y-6 sm:space-y-8 md:space-y-12">
+    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 border-b border-[#D6D2C7] overflow-hidden">
+      <div className="max-w-[1320px] mx-auto space-y-4 sm:space-y-8 md:space-y-10">
         {/* Section Header */}
-        <div className="text-center space-y-1.5 sm:space-y-2 max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#B58A4A] font-semibold font-varela">
+        <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 max-w-3xl mx-auto">
+          <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
             {landingPageData.gallery.tag}
           </p>
           <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A]">
@@ -51,92 +48,89 @@ export const Gallery: React.FC = () => {
           </p>
         </div>
 
-        {/* 5-IMAGE 3D COVERFLOW GALLERY CAROUSEL (Container: 1128px x 456px, Center Image: 808px x 456px) */}
-        <div className="relative w-full max-w-[1128px] h-[260px] sm:h-[400px] lg:h-[456px] mx-auto py-2 flex items-center justify-center">
-          <SwiperCarousel
-            data={galleryImages}
+        {/* 3D COVERFLOW SWIPER SLIDER (5 slides on Desktop, 1 on Mobile) */}
+        <div className="relative w-full max-w-[1320px] mx-auto py-2 sm:py-4">
+          <Swiper
             modules={[EffectCoverflow, Navigation, Autoplay]}
+            onSwiper={(swiper) => setSwiperInstance(swiper)}
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView="auto"
             loop={true}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            speed={800}
             coverflowEffect={{
               rotate: 0,
-              stretch: 60,
-              depth: 140,
-              modifier: 1,
+              stretch: 40,
+              depth: 200,
+              modifier: 1.5,
               slideShadows: false,
             }}
             breakpoints={{
-              640: {
-                coverflowEffect: {
-                  rotate: 0,
-                  stretch: 120,
-                  depth: 160,
-                  modifier: 1,
-                  slideShadows: false,
-                },
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              },
+              768: {
+                slidesPerView: 1.6,
+                spaceBetween: 0,
+              },
+              1024: {
+                slidesPerView: 1.7,
+                spaceBetween: 0,
               },
             }}
-            onSwiper={setSwiperRef}
-            className="w-full h-full overflow-visible"
-            swiperSlideClassName="!w-[270px] sm:!w-[520px] md:!w-[680px] lg:!w-[808px] !h-full transition-all duration-300 rounded-[12px] overflow-hidden shrink-0"
-            renderSlide={(img, idx) => (
-              <div className="relative w-full h-full rounded-[12px] overflow-hidden border border-white/30 shadow-2xl">
-                <Image
-                  src={img}
-                  alt={`Amaltas Gallery ${idx + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            )}
-          />
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            className="w-full !overflow-hidden"
+          >
+            {images.map((src, index) => (
+              <SwiperSlide key={index} className="flex justify-center items-center">
+                <div className="w-full max-w-[808px] relative aspect-[808/456] overflow-hidden rounded-[8px] sm:rounded-xl shadow-lg">
+                  <Image
+                    src={src}
+                    alt={`Amaltas Gallery ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 808px"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-          {/* OVERLAY NAV ARROWS ON CENTER IMAGE EDGES (left: ~160px from container) */}
+          {/* Left & Right Arrow Buttons Overlay on Center Card */}
           <button
             type="button"
-            onClick={() => swiperRef?.slidePrev()}
-            className="absolute left-2 sm:left-[10%] lg:left-[175px] top-1/2 -translate-y-1/2 z-40 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white text-[#30402A] shadow-xl flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"
+            onClick={() => swiperInstance?.slidePrev()}
             aria-label="Previous gallery image"
+            className="absolute left-2.5 sm:left-[6%] lg:left-[calc(50%-380px)] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
           >
-            <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
+            <BtnPrevIcon />
           </button>
-
           <button
             type="button"
-            onClick={() => swiperRef?.slideNext()}
-            className="absolute right-2 sm:right-[10%] lg:right-[175px] top-1/2 -translate-y-1/2 z-40 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white text-[#30402A] shadow-xl flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 transition-transform"
+            onClick={() => swiperInstance?.slideNext()}
             aria-label="Next gallery image"
+            className="absolute right-2.5 sm:right-[6%] lg:right-[calc(50%-380px)] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
           >
-            <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+            <BtnNextIcon />
           </button>
         </div>
 
         {/* SECTION CTAS DIRECTLY BELOW CAROUSEL */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 font-sans">
+        <div className="flex flex-row items-center justify-center gap-[12px] pt-1 sm:pt-4 font-open-sans">
           <button
             onClick={openWhatsApp}
-            className="flex items-center gap-2 bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-5 sm:px-6 py-2.5 sm:py-3 rounded text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-sm"
+            className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
           >
-            <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#30402A]" />
+            <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
             Enquire Now
           </button>
 
           <button
             onClick={scrollToForm}
-            className="flex items-center gap-2 bg-[#30402A] hover:bg-[#243120] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-md"
+            className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
           >
-            <FaCalendarAlt className="text-white text-sm" />
+            <FaCalendarAlt className="text-white text-xs" />
             Book Now
           </button>
         </div>

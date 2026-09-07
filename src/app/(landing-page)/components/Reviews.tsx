@@ -2,64 +2,58 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaStar } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
+import { RatingStarIcon } from "@/src/utils/icons";
 
 export const Reviews: React.FC = () => {
   return (
-    <section className="w-full bg-[#EEEEDC] py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
-      <div className="max-w-[1320px] mx-auto space-y-8 md:space-y-12">
+    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
+      <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-12">
         {/* Section Header with MakeMyTrip Badge */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 border-b border-[#D6D2C7]/40 pb-5 sm:pb-6">
-          <div className="space-y-1.5 sm:space-y-2">
-            <p className="text-xs uppercase tracking-widest text-[#B58A4A] font-semibold font-varela">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-6 border-b border-[#D6D2C7]/40 pb-4 sm:pb-6">
+          <div className="space-y-3 sm:space-y-4 md:space-y-6">
+            <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
               {landingPageData.reviews.tag}
             </p>
             <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-[40px] text-[#30402A]">
               {landingPageData.reviews.heading}
             </h2>
-            <div className="flex items-center gap-1 text-[#B58A4A] text-sm pt-1">
+            <div className="flex items-center gap-1.5 pt-0.5 sm:pt-1">
               {[...Array(5)].map((_, i) => (
-                <FaStar key={i} />
+                <RatingStarIcon key={i} className="w-[17px] h-[16px]" />
               ))}
             </div>
           </div>
 
-          <div className="shrink-0 pt-1 sm:pt-0">
+          <div className="shrink-0 pt-0.5 sm:pt-0">
             <Image
               src="/MakeMyTrip.png"
               alt="MakeMyTrip 5.0 Rating"
               width={132}
               height={42}
-              className="w-[110px] sm:w-[132px] h-auto object-contain"
+              className="w-[100px] sm:w-[132px] h-auto object-contain"
             />
           </div>
         </div>
 
         {/* Reviews Cards Grid (3 Cards, 1320px container, 424px width per card, 227px height, 8px radius) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 font-sans">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 font-sans">
           {landingPageData.reviews.testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="w-full max-w-[424px] min-h-[200px] sm:min-h-[227px] md:h-[227px] bg-[#FAF8F5] p-5 sm:p-6 rounded-[8px] border border-[#D6D2C7] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow mx-auto"
+              className="w-full max-w-[424px] min-h-[170px] sm:min-h-[227px] md:h-[227px] bg-[#FAF8F5] p-4 sm:p-6 rounded-[8px] border border-[#D6D2C7] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow mx-auto"
             >
-              <div className="space-y-2.5 sm:space-y-3">
-                <div className="flex items-center gap-1 text-[#B58A4A] text-xs">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-
-                <p className="text-xs sm:text-sm text-[#6B635E] leading-relaxed italic line-clamp-3">
+              <div className="space-y-2 sm:space-y-3">
+                <p className="text-xs sm:text-sm md:text-[14px] text-[#6B635E] font-manrope font-normal leading-relaxed line-clamp-4">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="border-t border-[#D6D2C7] pt-2.5 sm:pt-3 mt-3">
-                <h4 className="font-varela font-bold text-[#30402A] text-sm sm:text-base">
+              <div className="border-t border-[#D6D2C7] pt-2 sm:pt-3 mt-2 sm:mt-3">
+                <h4 className="font-varela font-bold text-[#30402A] text-xs sm:text-base">
                   {item.author}
                 </h4>
-                <p className="text-[10px] uppercase tracking-widest text-[#B58A4A] font-semibold mt-0.5">
+                <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#B58A4A] font-semibold mt-0.5">
                   {item.type}
                 </p>
               </div>

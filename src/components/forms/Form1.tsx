@@ -35,12 +35,12 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
   ];
 
   return (
-    <form onSubmit={handleSubmit} className={`grid ${gridView ? "grid-cols-1" : "grid-cols-1 md:grid-cols-5"} items-center gap-3.5 font-sans bg-transparent`}>
+    <form onSubmit={handleSubmit} className={`grid ${gridView ? "grid-cols-1" : "grid-cols-1 md:grid-cols-5"} items-center gap-2.5 sm:gap-3.5 font-sans bg-transparent`}>
       {formFields.map((field, index) => (
         <React.Fragment key={index}>
           {field.type === "date" ? (
-            <div className="bg-[#FAF8F5] flex items-center gap-2.5 py-3 px-3.5 rounded-lg border border-[#D6D2C7] focus-within:ring-2 focus-within:ring-[#B58A4A]">
-              <label className="text-[#B58A4A] text-sm shrink-0">{field.icon}</label>
+            <div className="bg-[#FAF8F5] flex items-center gap-2 sm:gap-2.5 py-2.5 sm:py-3 px-3 sm:px-3.5 rounded-lg border border-[#D6D2C7] focus-within:ring-2 focus-within:ring-[#B58A4A]">
+              <label className="text-[#B58A4A] text-xs sm:text-sm shrink-0">{field.icon}</label>
               <DatePicker
                 selected={startDate}
                 onChange={handleDateChange}
@@ -48,17 +48,17 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
                 endDate={endDate}
                 selectsRange
                 placeholderText={field.label}
-                className="placeholder:text-gray-500 text-[#192118] outline-none w-full bg-transparent text-sm font-medium"
+                className="placeholder:text-gray-500 text-[#192118] outline-none w-full bg-transparent text-xs sm:text-sm font-medium"
               />
             </div>
           ) : (
-            <div className="flex bg-[#FAF8F5] items-center gap-2.5 py-3 px-3.5 rounded-lg border border-[#D6D2C7] focus-within:ring-2 focus-within:ring-[#B58A4A]">
-              <label className="text-[#B58A4A] text-sm shrink-0">{field.icon}</label>
+            <div className="flex bg-[#FAF8F5] items-center gap-2 sm:gap-2.5 py-2.5 sm:py-3 px-3 sm:px-3.5 rounded-lg border border-[#D6D2C7] focus-within:ring-2 focus-within:ring-[#B58A4A]">
+              <label className="text-[#B58A4A] text-xs sm:text-sm shrink-0">{field.icon}</label>
               <input
                 type={field.type}
                 name={field.name}
                 placeholder={field.label}
-                className="w-full placeholder:text-gray-500 outline-none text-[#192118] font-medium bg-transparent text-sm"
+                className="w-full placeholder:text-gray-500 outline-none text-[#192118] font-medium bg-transparent text-xs sm:text-sm"
                 value={field.value}
                 onChange={field.onChange}
               />
@@ -70,7 +70,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#B58A4A] hover:bg-[#9e773c] w-full rounded-lg text-white font-medium py-3.5 transition-colors shadow-md cursor-pointer flex items-center justify-center gap-2 text-sm uppercase tracking-wide shrink-0"
+        className="bg-[#B58A4A] hover:bg-[#9e773c] w-full rounded-lg text-white font-medium py-3 sm:py-3.5 transition-colors shadow-md cursor-pointer flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wide shrink-0"
       >
         {isSubmitting ? (
           "Submitting..."

@@ -22,47 +22,51 @@ export const Dining: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
-      <div className="max-w-7xl mx-auto space-y-8 md:space-y-14">
+    <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
+      <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-14">
         {/* Section Header */}
-        <div className="text-center space-y-2 sm:space-y-3 max-w-3xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#B58A4A] font-semibold font-varela">
+        <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 max-w-3xl mx-auto">
+          <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
             {landingPageData.dining.tag}
           </p>
-          <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight">
-            Meals Worth Slowing<br />Down For
-          </h2>
+          <h2
+            className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight"
+            dangerouslySetInnerHTML={{ __html: landingPageData.dining.heading }}
+          />
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch max-w-[1320px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-[40px] items-center max-w-[1320px] mx-auto">
           {/* Left Side Image with Behind Offset Border Frame */}
-          <div className="lg:col-span-6 relative pt-3 pl-3 sm:pt-4 sm:pl-4 flex items-center justify-center">
-            {/* Background Offset Border Frame (Top: 0, Left: 0, offset by 16px behind the image) */}
-            <div className="absolute top-0 left-0 w-[calc(100%-12px)] sm:w-[calc(100%-16px)] h-[calc(100%-12px)] sm:h-[calc(100%-16px)] border border-[#8C827A] rounded-[8px] pointer-events-none" />
+          <div className="lg:col-span-7 flex items-center justify-center lg:justify-start">
+            <div className="relative w-full max-w-[770.67px] h-[260px] sm:h-[400px] lg:h-[534.84px] pt-3 pl-3 sm:pt-4 sm:pl-4 lg:pt-[16px] lg:pl-[16px]">
+              {/* Background Offset Border Frame (Top: 0, Left: 0, Radius: 8px, Border: 1px) */}
+              <div className="absolute top-0 left-0 w-[calc(100%-12px)] sm:w-[calc(100%-16px)] h-[calc(100%-12px)] sm:h-[calc(100%-16px)] border border-[#8C827A] rounded-[8px] pointer-events-none" />
 
-            {/* Main Image (Top 16px, Left 16px offset, Height 518.84px, Radius 8px) */}
-            <div className="relative w-full h-[260px] sm:h-[400px] lg:h-[518.84px] rounded-[8px] overflow-hidden shadow-sm z-10">
-              <Image
-                src={landingPageData.dining.image}
-                alt="Dining at Amaltas Villa"
-                fill
-                className="object-cover object-center"
-              />
+              {/* Main Image (Top 16px, Left 16px, Radius 8px) */}
+              <div className="relative w-full h-full rounded-[8px] overflow-hidden shadow-sm z-10">
+                <Image
+                  src={landingPageData.dining.image}
+                  alt="Dining at Amaltas Villa"
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Right Side Dining List matching image height from top to bottom */}
-          <div className="lg:col-span-6 flex flex-col justify-center pt-2 sm:pt-4">
-            <div className="flex flex-col justify-between h-full lg:h-[518.84px] border-y border-[#8C827A] divide-y divide-[#8C827A]">
+          {/* Right Side Dining List (Width: max 536px, Height: 517.65px) */}
+          <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end w-full">
+            <div className="flex flex-col justify-between w-full max-w-[536px] lg:h-[517.65px] border-y-[0.8px] border-[#D6D2C7] divide-y-[0.8px] divide-[#D6D2C7]">
               {landingPageData.dining.items.map((item, idx) => (
-                <div key={idx} className="py-3.5 sm:py-5 flex flex-col justify-center space-y-1 sm:space-y-1.5 flex-1">
-                  <h3 className="text-lg sm:text-2xl font-varela text-[#30402A] font-medium">
+                <div key={idx} className="py-3 sm:py-4 lg:py-5 flex flex-col justify-center space-y-1 sm:space-y-1.5 flex-1">
+                  <h3 className="text-xl sm:text-2xl font-varela text-[#30402A]">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm md:text-base text-[#6B635E] font-dm-sans leading-relaxed">
-                    {item.description}
-                  </p>
+                  <p
+                    className="text-[14px] text-[#5C625B] font-manrope font-normal leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                  />
                 </div>
               ))}
             </div>
@@ -70,20 +74,20 @@ export const Dining: React.FC = () => {
         </div>
 
         {/* Centered CTAs at Bottom */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 font-sans">
+        <div className="flex flex-row items-center justify-center gap-[12px] pt-1 sm:pt-4 font-open-sans">
           <button
             onClick={() => openWhatsApp()}
-            className="flex items-center gap-2 bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-5 sm:px-6 py-2.5 sm:py-3 rounded text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-sm"
+            className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
           >
-            <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#30402A]" />
+            <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
             Enquire Now
           </button>
 
           <button
             onClick={scrollToForm}
-            className="flex items-center gap-2 bg-[#30402A] hover:bg-[#243120] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded text-xs sm:text-sm font-medium transition-all cursor-pointer shadow-md"
+            className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
           >
-            <FaCalendarAlt className="text-white text-sm" />
+            <FaCalendarAlt className="text-white text-xs" />
             Book Now
           </button>
         </div>

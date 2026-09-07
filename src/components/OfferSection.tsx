@@ -31,7 +31,7 @@ const OfferSection = () => {
         isFixed ? "fixed top-0 animate-offer-slide" : "relative"
       }`}
     >
-      <p className="text-center text-[#EEEEDC] text-xs md:text-sm font-sans tracking-wide">
+      <p className="text-center text-white text-xs md:text-sm font-sans tracking-wide">
         {landingPageData.offer[0]}
       </p>
     </SectionWithContainer>

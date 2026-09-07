@@ -33,14 +33,14 @@ export default function LandingPage() {
       {/* 5. Horizontal Booking Form Strip & Benefits Disclaimer */}
       <SectionWithContainer
         defaultPadding={false}
-        sectionClassName="bg-[#30402A] border-b border-[#B58A4A]/30 py-6 px-4 md:px-8"
-        containerClassName="space-y-4 max-w-7xl mx-auto"
+        sectionClassName="bg-[#30402A] border-b border-[#B58A4A]/30 py-3 sm:py-6 px-0 md:px-8"
+        containerClassName="!px-3 sm:!px-6 md:!px-12 lg:!px-16 space-y-2 sm:space-y-4 max-w-7xl mx-auto"
       >
         <div id="form">
           <Form1 />
         </div>
         <p
-          className="text-xs text-[#EEEEDC]/80 max-w-3xl text-center mx-auto font-sans tracking-wide pt-1"
+          className="text-xs sm:text-[14px] text-white max-w-3xl text-center mx-auto font-sans tracking-wide pt-0.5 sm:pt-1"
           dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
         />
       </SectionWithContainer>
