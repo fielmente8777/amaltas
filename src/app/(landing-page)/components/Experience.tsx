@@ -10,22 +10,10 @@ import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon } from "@/src/utils/icons";
 
 import type { Swiper as SwiperType } from "swiper";
 
+import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+
 export const Experience: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
-
-  const openWhatsApp = (title: string) => {
-    window.open(
-      `https://wa.me/918868888494?text=Hi%2C%20I%20want%20to%20know%20more%20about%20${encodeURIComponent(
-        title
-      )}%20at%20Amaltas%20Villa.`,
-      "_blank"
-    );
-  };
-
-  const scrollToForm = () => {
-    const el = document.getElementById("booking-form") || document.getElementById("form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-20 border-b border-[#D6D2C7]">

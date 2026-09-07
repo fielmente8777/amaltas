@@ -7,18 +7,9 @@ import { landingPageData } from "./pagedata";
 import { LocationPinIcon, WhatsAppIcon } from "@/src/utils/icons";
 import LazyLoadedVideo from "@/src/components/Video/LazyLoadedVideo";
 
-export const Location: React.FC = () => {
-  const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/918868888494?text=Hi%2C%20I%20want%20to%20enquire%20about%20directions%20to%20Amaltas%20Villa.",
-      "_blank"
-    );
-  };
+import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
 
-  const scrollToForm = () => {
-    const el = document.getElementById("booking-form") || document.getElementById("form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+export const Location: React.FC = () => {
 
   return (
     <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">

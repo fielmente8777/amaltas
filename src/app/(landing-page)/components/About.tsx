@@ -6,15 +6,9 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
 import { WhatsAppIcon } from "@/src/utils/icons";
 
-export const About: React.FC = () => {
-  const openWhatsApp = () => {
-    window.open("https://wa.me/918868888494?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Amaltas%20Villa.", "_blank");
-  };
+import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
 
-  const scrollToForm = () => {
-    const el = document.getElementById("booking-form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+export const About: React.FC = () => {
 
   return (
     <section className="relative w-full bg-[#EEEEDC] py-16 sm:py-20 md:py-28 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">

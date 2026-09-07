@@ -8,6 +8,7 @@ import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
 import { Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon } from "@/src/utils/icons";
+import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
 
 interface RoomItemProps {
   room: {
@@ -150,20 +151,6 @@ const RoomCard: React.FC<RoomItemProps> = ({
 };
 
 export const Room: React.FC = () => {
-
-  const openWhatsApp = (roomTitle: string) => {
-    window.open(
-      `https://wa.me/918868888494?text=Hi%2C%20I%20am%20interested%20in%20booking%20the%20${encodeURIComponent(
-        roomTitle
-      )}%20at%20Amaltas%20Villa.`,
-      "_blank"
-    );
-  };
-
-  const scrollToForm = () => {
-    const el = document.getElementById("booking-form") || document.getElementById("form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-20 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">

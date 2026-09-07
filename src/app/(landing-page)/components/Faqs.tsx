@@ -6,23 +6,13 @@ import { IoAdd, IoRemove } from "react-icons/io5";
 import { landingPageData } from "./pagedata";
 import { WhatsAppIcon } from "@/src/utils/icons";
 
+import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+
 export const Faqs: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/918868888494?text=Hi%2C%20I%20have%20a%20question%20about%20Amaltas%20Villa.",
-      "_blank"
-    );
-  };
-
-  const scrollToForm = () => {
-    const el = document.getElementById("booking-form") || document.getElementById("form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

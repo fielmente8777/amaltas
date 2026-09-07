@@ -15,22 +15,12 @@ import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
+import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+
 export const Gallery: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   const images = landingPageData.gallery.images;
-
-  const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/918868888494?text=Hi%2C%20I%20am%20looking%20at%20Amaltas%20Gallery%20and%20want%20to%20enquire.",
-      "_blank"
-    );
-  };
-
-  const scrollToForm = () => {
-    const el = document.getElementById("booking-form") || document.getElementById("form");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 border-b border-[#D6D2C7] overflow-hidden">
