@@ -2,13 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
 import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
 import { Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon } from "@/src/utils/icons";
-import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
+import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
 
 interface RoomItemProps {
   room: {
@@ -21,14 +20,12 @@ interface RoomItemProps {
     images?: string[];
   };
   isEven: boolean;
-  openWhatsApp: (roomTitle: string) => void;
   scrollToForm: () => void;
 }
 
 const RoomCard: React.FC<RoomItemProps> = ({
   room,
   isEven,
-  openWhatsApp,
   scrollToForm,
 }) => {
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
@@ -65,58 +62,52 @@ const RoomCard: React.FC<RoomItemProps> = ({
           )}
         />
 
-        {/* Swiper Arrow Buttons: Left & Right vertically centered on Mobile, Corner on Desktop */}
-        <button
-          type="button"
-          onClick={() => swiperInstance?.slidePrev()}
-          aria-label="Previous photo"
-          className={`absolute z-20 cursor-pointer drop-shadow-md flex items-center justify-center left-2.5 sm:left-4 top-1/2 -translate-y-1/2 ${
-            isEven
-              ? "lg:top-auto lg:translate-y-0 lg:bottom-5 lg:left-5"
-              : "lg:top-auto lg:translate-y-0 lg:bottom-5 lg:left-auto lg:right-[60px]"
-          } scale-[0.75] sm:scale-90 lg:scale-100 hover:opacity-90 active:opacity-75`}
-        >
-          <BtnPrevIcon />
-        </button>
+        {/* Swiper Arrow Buttons: Flow Horizontal, Width: 88px, Height: 40px, Top: 454px, Left: 21px, Gap: 8px */}
+        <div className="absolute z-20 flex flex-row items-center gap-[8px] w-[88px] h-[40px] left-[14px] sm:left-[21px] bottom-[14px] sm:bottom-[18px] lg:bottom-auto lg:top-[454px] lg:left-[21px]">
+          <button
+            type="button"
+            onClick={() => swiperInstance?.slidePrev()}
+            aria-label="Previous photo"
+            className="w-[40px] h-[40px] cursor-pointer drop-shadow-md flex items-center justify-center hover:opacity-90 active:opacity-75 shrink-0"
+          >
+            <BtnPrevIcon />
+          </button>
 
-        <button
-          type="button"
-          onClick={() => swiperInstance?.slideNext()}
-          aria-label="Next photo"
-          className={`absolute z-20 cursor-pointer drop-shadow-md flex items-center justify-center right-2.5 sm:right-4 top-1/2 -translate-y-1/2 ${
-            isEven
-              ? "lg:top-auto lg:translate-y-0 lg:bottom-5 lg:left-[60px] lg:right-auto"
-              : "lg:top-auto lg:translate-y-0 lg:bottom-5 lg:right-5"
-          } scale-[0.75] sm:scale-90 lg:scale-100 hover:opacity-90 active:opacity-75`}
-        >
-          <BtnNextIcon />
-        </button>
+          <button
+            type="button"
+            onClick={() => swiperInstance?.slideNext()}
+            aria-label="Next photo"
+            className="w-[40px] h-[40px] cursor-pointer drop-shadow-md flex items-center justify-center hover:opacity-90 active:opacity-75 shrink-0"
+          >
+            <BtnNextIcon />
+          </button>
+        </div>
       </div>
 
       {/* Content Box (Flush under image on Mobile matching Figma, Overlapping Box on Desktop) */}
       <div
-        className={`w-full lg:w-[609.33px] z-10 bg-[#EEEEDC] lg:border lg:border-[#D6D2C7] rounded-b-[8px] lg:rounded-[8px] p-4 sm:p-6 lg:p-8 flex flex-col gap-3 sm:gap-4 lg:gap-5 lg:shadow-lg mt-0 ${
+        className={`w-full lg:w-[609.33px] z-10 bg-[#EEEEDC] lg:border lg:border-[#D6D2C7] rounded-b-[8px] lg:rounded-[8px] px-5 sm:px-8 lg:px-[47px] pt-6 sm:pt-8 lg:pt-[47px] pb-6 sm:pb-8 lg:pb-[49px] flex flex-col lg:shadow-lg mt-0 ${
           isEven
             ? "lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2"
             : "lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2"
         }`}
       >
-        <div className="space-y-1 sm:space-y-2">
+        <div>
           <span className="text-[11px] sm:text-[14px] lg:text-[16px] uppercase tracking-widest text-[#B58A4A] font-normal font-dm-sans block">
             {room.tag}
           </span>
 
-          <h3 className="heading-h3 font-varela text-xl sm:text-2xl lg:text-3xl text-[#30402A]">
+          <h3 className="heading-h3 font-varela text-xl sm:text-2xl lg:text-3xl text-[#30402A] mt-2 sm:mt-3 lg:mt-[14px]">
             {room.title}
           </h3>
 
-          <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-[#6B635E] leading-relaxed font-manrope font-normal">
+          <p className="text-[13px] sm:text-[15px] lg:text-[16px] text-[#6B635E] leading-relaxed font-manrope font-normal mt-2.5 sm:mt-3.5 lg:mt-[16px]">
             {room.description}
           </p>
         </div>
 
         {/* Feature Tags */}
-        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3.5 sm:mt-4 lg:mt-[23px]">
           {room.features.map((feat, idx) => (
             <span
               key={idx}
@@ -128,20 +119,22 @@ const RoomCard: React.FC<RoomItemProps> = ({
         </div>
 
         {/* Actions */}
-        <div className="flex flex-row items-center gap-2.5 sm:gap-[12px] font-open-sans pt-1 sm:pt-1">
-          <button
-            onClick={() => openWhatsApp(room.title)}
+        <div className="flex flex-row items-center gap-2.5 sm:gap-[12px] font-open-sans mt-4 sm:mt-5 lg:mt-[25px]">
+          <a
+            href={getWhatsAppUrl(room.title)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 sm:flex-initial w-full sm:w-[160px] h-[40px] sm:h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] rounded-[4px] text-xs sm:text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
           >
             <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
             Enquire Now
-          </button>
+          </a>
 
           <button
             onClick={scrollToForm}
             className="flex-1 sm:flex-initial w-full sm:w-[160px] h-[40px] sm:h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] rounded-[4px] text-xs sm:text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
           >
-            <FaCalendarAlt className="text-white text-xs" />
+            <BookNowIcon className="w-3.5 h-3.5 text-white" />
             Book Now
           </button>
         </div>
@@ -181,7 +174,6 @@ export const Room: React.FC = () => {
               key={room.id}
               room={room}
               isEven={index % 2 === 0}
-              openWhatsApp={openWhatsApp}
               scrollToForm={scrollToForm}
             />
           ))}

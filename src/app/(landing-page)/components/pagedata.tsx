@@ -120,11 +120,7 @@ export const landingPageData = {
       },
       {
         title: "Couple's Escape",
-        image: "/experience3.png",
-      },
-      {
-        title: "Local Corbett",
-        image: "/experience3.png",
+        image: "/couple-escape.png",
       },
     ],
   },
