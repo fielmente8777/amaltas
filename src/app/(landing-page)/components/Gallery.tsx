@@ -77,6 +77,8 @@ export const Gallery: React.FC = () => {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             className="w-full !overflow-hidden"
           >
+
+            
             {images.map((src, index) => (
               <SwiperSlide key={index} className="flex justify-center items-center">
                 <div className="w-full  relative aspect-[4/2] overflow-hidden rounded-[8px] shadow-lg">
