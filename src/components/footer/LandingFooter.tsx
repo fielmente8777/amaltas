@@ -28,7 +28,7 @@ const LandingFooter = () => {
             <Form1 />
 
             {/* OFFER TEXT */}
-            <p className="mt-2 text-center text-xs text-white/90 md:text-sm">
+            <p className="mt-2 text-center text-xs text-white/90 md:text-sm font-open-sans">
               Save 15% when you book direct · Free cancellation on most dates*
             </p>
           </div>

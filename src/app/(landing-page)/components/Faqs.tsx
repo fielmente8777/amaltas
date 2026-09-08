@@ -16,7 +16,11 @@ export const Faqs: React.FC = () => {
   };
 
   return (
-    <section id="faqs" className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
+    <section
+      id="faqs"
+      style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}
+      className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7] relative z-10"
+    >
       <div className="max-w-[1320px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-16 items-start">
           {/* Left Column: Heading & CTAs */}
@@ -60,14 +64,14 @@ export const Faqs: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => toggleFaq(idx)}
-                      className="w-full py-3.5 sm:py-4 lg:py-5 flex items-center justify-between gap-3 sm:gap-6 text-left cursor-pointer hover:opacity-80 transition-opacity"
+                      className="w-full py-3.5 sm:py-4 lg:py-5 flex items-center justify-between gap-3 sm:gap-6 text-left cursor-pointer transition-none"
                       aria-expanded={isOpen}
                     >
-                      <span className="font-varela text-base sm:text-lg lg:text-xl font-normal text-[#30402A]">
+                      <span className="font-varela text-lg sm:text-[24px] leading-snug font-normal text-[#30402A]">
                         {item.q}
                       </span>
 
-                      <span className="shrink-0 text-[#B58A4A] text-lg sm:text-xl">
+                      <span className="shrink-0 text-[#B58A4A] text-lg sm:text-2xl">
                         {isOpen ? <IoRemove /> : <IoAdd />}
                       </span>
                     </button>

@@ -33,13 +33,13 @@ export const Gallery: React.FC = () => {
           <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A]">
             {landingPageData.gallery.heading}
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-[#5F6764] font-sans">
+          <p className="text-xs sm:text-sm md:text-base text-[#5F6764] font-manrope">
             {landingPageData.gallery.subtext}
           </p>
         </div>
 
-        {/* 3D COVERFLOW SWIPER SLIDER (5 slides on Desktop, 1 on Mobile) */}
-        <div className="relative w-full max-w-[1320px] mx-auto py-2 sm:py-4">
+        {/* SWIPER SLIDER */}
+        <div className="relative w-full max-w-full overflow-hidden mx-auto py-2 sm:py-4">
           <Swiper
             modules={[EffectCoverflow, Navigation, Autoplay]}
             onSwiper={(swiper) => setSwiperInstance(swiper)}
@@ -50,23 +50,28 @@ export const Gallery: React.FC = () => {
             speed={800}
             coverflowEffect={{
               rotate: 0,
-              stretch: 40,
-              depth: 200,
-              modifier: 1.5,
+              stretch: 20,
+              depth: 300,
+              modifier: 2.5,
               slideShadows: false,
             }}
+            slidesPerView={1}
             breakpoints={{
               0: {
                 slidesPerView: 1,
                 spaceBetween: 0,
               },
+              640: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+              },
               768: {
-                slidesPerView: 1.6,
-                spaceBetween: 0,
+                slidesPerView: 2,
+                spaceBetween: 20,
               },
               1024: {
-                slidesPerView: 2.5,
-                spaceBetween: 0,
+                slidesPerView: 2,
+                spaceBetween: 24,
               },
             }}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -74,12 +79,12 @@ export const Gallery: React.FC = () => {
           >
             {images.map((src, index) => (
               <SwiperSlide key={index} className="flex justify-center items-center">
-                <div className="w-full max-w-[808px] relative aspect-[808/456] overflow-hidden rounded-[8px] sm:rounded-xl shadow-lg">
+                <div className="w-full  relative aspect-[4/2] overflow-hidden rounded-[8px] shadow-lg">
                   <Image
                     src={src}
                     alt={`Amaltas Gallery ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-[8px]"
                     sizes="(max-width: 768px) 100vw, 808px"
                   />
                 </div>
@@ -87,12 +92,12 @@ export const Gallery: React.FC = () => {
             ))}
           </Swiper>
 
-          {/* Left & Right Arrow Buttons Overlay on Center Card */}
+          {/* Arrow Buttons positioned on the sides of the middle image */}
           <button
             type="button"
             onClick={() => swiperInstance?.slidePrev()}
             aria-label="Previous gallery image"
-            className="absolute left-2.5 sm:left-[6%] lg:left-[calc(50%-380px)] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
+            className="absolute left-3 sm:left-[10%] md:left-[26.5%] lg:left-[27%] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
           >
             <BtnPrevIcon />
           </button>
@@ -100,7 +105,7 @@ export const Gallery: React.FC = () => {
             type="button"
             onClick={() => swiperInstance?.slideNext()}
             aria-label="Next gallery image"
-            className="absolute right-2.5 sm:right-[6%] lg:right-[calc(50%-380px)] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
+            className="absolute right-3 sm:right-[10%] md:right-[26.5%] lg:right-[27%] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
           >
             <BtnNextIcon />
           </button>

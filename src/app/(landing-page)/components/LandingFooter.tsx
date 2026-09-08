@@ -20,7 +20,7 @@ export const LandingFooter: React.FC = () => {
             <Form1 />
           </div>
 
-          <p className="text-xs sm:text-[14px] text-white pt-0.5 sm:pt-2 font-sans tracking-wide">
+          <p className="text-xs sm:text-[14px] text-white pt-0.5 sm:pt-2 font-open-sans tracking-wide">
             Save 15% when you book direct · Free cancellation on most dates*
           </p>
         </div>
@@ -41,12 +41,12 @@ export const LandingFooter: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Location (Header 14px, Content 18px, Tertiary #6B635E, Secondary Icon #B58A4A, Font Inter) */}
+          {/* Column 2: Location (Header 14px, Content 18px, Tertiary #6B635E, Secondary Icon #B58A4A, Font DM Sans) */}
           <div className="space-y-1.5 sm:space-y-2 max-w-[340px]">
-            <p className="font-sans font-medium text-xs sm:text-[14px] text-[#6B635E] uppercase tracking-wider">
+            <p className="font-dm-sans font-medium text-[14px] text-[#6B635E]">
               Location
             </p>
-            <div className="flex items-start gap-2.5 text-sm sm:text-[18px] text-[#6B635E] font-sans">
+            <div className="flex items-start gap-2.5 text-[18px] text-[#6B635E] font-dm-sans">
               <span className="mt-1 text-[#B58A4A] shrink-0">
                 <LocationPinIcon />
               </span>
@@ -56,12 +56,12 @@ export const LandingFooter: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 3: Contact (Header 14px, Content 18px, Tertiary #6B635E, Secondary Icon #B58A4A, Shifted to Right) */}
+          {/* Column 3: Contact (Header 14px, Content 18px, Tertiary #6B635E, Secondary Icon #B58A4A, Font DM Sans) */}
           <div className="space-y-1.5 sm:space-y-2">
-            <p className="font-sans font-medium text-xs sm:text-[14px] text-[#6B635E] uppercase tracking-wider">
+            <p className="font-dm-sans font-medium text-[14px] text-[#6B635E]">
               Contact
             </p>
-            <div className="space-y-1.5 sm:space-y-2 text-sm sm:text-[18px] text-[#6B635E] font-sans">
+            <div className="space-y-1.5 sm:space-y-2 text-[18px] text-[#6B635E] font-dm-sans">
               <div className="flex items-center gap-2.5">
                 <span className="text-[#B58A4A] shrink-0">
                   <PhoneIcon />
@@ -80,7 +80,7 @@ export const LandingFooter: React.FC = () => {
       </div>
 
       {/* Bottom Sub-Footer Bar (Primary Color #30402A, Height: 53px, Padding: px-6 md:px-16) */}
-      <div className="w-full bg-[#30402A] min-h-[44px] sm:h-[53px] py-2.5 sm:py-0 px-4 sm:px-6 md:px-16 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-white/90 font-sans border-t border-[#30402A] gap-1 sm:gap-0 text-center sm:text-left">
+      <div className="w-full bg-[#30402A] min-h-[44px] sm:h-[53px] py-2.5 sm:py-0 px-4 sm:px-6 md:px-16 flex flex-col sm:flex-row items-center justify-between text-[14px] text-white/90 font-dm-sans border-t border-[#30402A] gap-1 sm:gap-0 text-center sm:text-left">
         <p>© 2026 AMALTAS. All rights reserved.</p>
         <p>Powered by Fielmente</p>
       </div>

@@ -20,7 +20,7 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
   return (
     <Section
       defaultPadding={false}
-      className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-16/8 overflow-hidden"
+      className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/8] md:max-h-[720px] overflow-hidden"
     >
       {/* BACKGROUND IMAGE SLIDER WITH AUTOPLAY */}
       <SwiperCarousel

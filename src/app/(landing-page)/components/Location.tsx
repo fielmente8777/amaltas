@@ -37,13 +37,13 @@ export const Location: React.FC = () => {
               </h2>
             </div>
 
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-[#6B635E] font-sans pt-1 lg:pt-0">
+            <div className="flex items-center gap-2 text-sm sm:text-[18px] text-[#6B635E] font-dm-sans pt-1 lg:pt-0">
               <span className="shrink-0"><LocationPinIcon /></span>
-              <p>{landingPageData.location.address}</p>
+              <p className="whitespace-normal md:whitespace-nowrap">{landingPageData.location.address}</p>
             </div>
 
             {/* Distance Matrix Table (No Icons, Clean Horizontal Border Dividers) */}
-            <div className="border-y divide-y border-[#D6D2C7] divide-[#D6D2C7] text-xs sm:text-sm font-sans">
+            <div className="border-y divide-y border-[#D6D2C7] divide-[#D6D2C7] text-[14px] font-manrope">
               {landingPageData.location.matrix.map((row, idx) => (
                 <div key={idx} className="flex items-center justify-between py-2 sm:py-3.5">
                   <span className="text-[#6B635E] font-normal">{row.place}</span>
