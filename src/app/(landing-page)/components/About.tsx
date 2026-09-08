@@ -2,11 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
-import { WhatsAppIcon } from "@/src/utils/icons";
+import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
 
-import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
 
 export const About: React.FC = () => {
 
@@ -49,19 +48,21 @@ export const About: React.FC = () => {
 
           {/* Desktop Only Buttons */}
           <div className="hidden lg:flex flex-row items-center gap-[12px] pt-2 sm:pt-3 font-open-sans">
-            <button
-              onClick={openWhatsApp}
+            <a
+              href={getWhatsAppUrl("About")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
               Enquire Now
-            </button>
+            </a>
 
             <button
               onClick={scrollToForm}
               className="w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
             >
-              <FaCalendarAlt className="text-white text-xs" />
+              <BookNowIcon className="w-3.5 h-3.5 text-white" />
               Book Now
             </button>
           </div>
@@ -77,19 +78,21 @@ export const About: React.FC = () => {
 
           {/* Mobile Only Buttons (Positioned below description) */}
           <div className="flex lg:hidden flex-row items-center gap-3 pt-3 sm:pt-4 font-open-sans w-full">
-            <button
-              onClick={openWhatsApp}
+            <a
+              href={getWhatsAppUrl("About")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 h-[42px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
               Enquire Now
-            </button>
+            </a>
 
             <button
               onClick={scrollToForm}
               className="flex-1 h-[42px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
             >
-              <FaCalendarAlt className="text-white text-xs" />
+              <BookNowIcon className="w-3.5 h-3.5 text-white" />
               Book Now
             </button>
           </div>

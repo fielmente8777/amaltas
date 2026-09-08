@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
-import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon } from "@/src/utils/icons";
+import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -15,7 +14,7 @@ import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
-import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
 
 export const Gallery: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -113,19 +112,21 @@ export const Gallery: React.FC = () => {
 
         {/* SECTION CTAS DIRECTLY BELOW CAROUSEL */}
         <div className="flex flex-row items-center justify-center gap-[12px] pt-1 sm:pt-4 font-open-sans">
-          <button
-            onClick={openWhatsApp}
+          <a
+            href={getWhatsAppUrl("Gallery")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
           >
             <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
             Enquire Now
-          </button>
+          </a>
 
           <button
             onClick={scrollToForm}
             className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
           >
-            <FaCalendarAlt className="text-white text-xs" />
+            <BookNowIcon className="w-3.5 h-3.5 text-white" />
             Book Now
           </button>
         </div>

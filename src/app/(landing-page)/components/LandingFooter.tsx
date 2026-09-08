@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Form1 from "@/src/components/forms/Form1";
 import { landingPageData } from "./pagedata";
-import { LocationPinIcon, PhoneIcon, EmailIcon } from "@/src/utils/icons";
+import { FooterLocationIcon, PhoneIcon, EmailIcon } from "@/src/utils/icons";
 
 export const LandingFooter: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ export const LandingFooter: React.FC = () => {
           <div className="flex items-center">
             <div className="relative w-[120px] h-[130px] sm:w-[149px] sm:h-[160px] shrink-0">
               <Image
-                src="/logo.png"
+                src="/logo-image1.png"
                 alt="Amaltas Logo"
                 fill
                 className="object-contain"
@@ -48,7 +48,7 @@ export const LandingFooter: React.FC = () => {
             </p>
             <div className="flex items-start gap-2.5 text-[18px] text-[#6B635E] font-dm-sans">
               <span className="mt-1 text-[#B58A4A] shrink-0">
-                <LocationPinIcon />
+                <FooterLocationIcon />
               </span>
               <p className="leading-relaxed">
                 {landingPageData.contact.location}
@@ -66,13 +66,23 @@ export const LandingFooter: React.FC = () => {
                 <span className="text-[#B58A4A] shrink-0">
                   <PhoneIcon />
                 </span>
-                <p>Call: {landingPageData.contact.phone}</p>
+                <a
+                  href={`tel:${landingPageData.contact.phone.replace(/[\s-]/g, "")}`}
+                  className="hover:text-[#30402A] transition-colors"
+                >
+                  Call: {landingPageData.contact.phone}
+                </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <span className="text-[#B58A4A] shrink-0">
                   <EmailIcon />
                 </span>
-                <p>Email: {landingPageData.contact.email}</p>
+                <a
+                  href={`mailto:${landingPageData.contact.email}`}
+                  className="hover:text-[#30402A] transition-colors"
+                >
+                  Email: {landingPageData.contact.email}
+                </a>
               </div>
             </div>
           </div>

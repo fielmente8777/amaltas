@@ -2,15 +2,14 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaCalendarAlt } from "react-icons/fa";
 import { landingPageData } from "./pagedata";
 import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
 import { Navigation, Autoplay } from "swiper/modules";
-import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon } from "@/src/utils/icons";
+import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
 
 import type { Swiper as SwiperType } from "swiper";
 
-import { openWhatsApp, scrollToForm } from "@/src/utils/constent";
+import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
 
 export const Experience: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
@@ -49,9 +48,11 @@ export const Experience: React.FC = () => {
           className="w-full"
           swiperSlideClassName="!h-auto"
           renderSlide={(card) => (
-            <div
-              onClick={() => openWhatsApp(card.title)}
-              className="group relative h-[390px] sm:h-[460px] lg:h-[520px] w-full overflow-hidden cursor-pointer"
+            <a
+              href={getWhatsAppUrl(card.title)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block h-[390px] sm:h-[460px] lg:h-[520px] w-full overflow-hidden cursor-pointer"
             >
               <Image
                 src={card.image}
@@ -73,7 +74,7 @@ export const Experience: React.FC = () => {
                   {card.title}
                 </p>
               </div>
-            </div>
+            </a>
           )}
         />
 
@@ -99,19 +100,21 @@ export const Experience: React.FC = () => {
 
       {/* Global Section CTAs */}
       <div className="flex flex-row items-center justify-center gap-[12px] pt-5 sm:pt-10 px-4 sm:px-6 font-open-sans">
-        <button
-          onClick={() => openWhatsApp("Experiences")}
+        <a
+          href={getWhatsAppUrl("Experiences")}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
         >
           <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
           Enquire Now
-        </button>
+        </a>
 
         <button
           onClick={scrollToForm}
           className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
         >
-          <FaCalendarAlt className="text-white text-xs" />
+          <BookNowIcon className="w-3.5 h-3.5 text-white" />
           Book Now
         </button>
       </div>
