@@ -41,7 +41,7 @@ export default function LandingPage() {
             <Form1 />
           </div>
           <p
-            className="text-xs sm:text-[14px] text-white max-w-3xl text-center mx-auto font-sans tracking-wide pt-0.5 sm:pt-1"
+            className="font-open-sans font-normal text-[14px] leading-[20px] tracking-normal text-white text-center max-w-3xl mx-auto pt-4"
             dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
           />
         </SectionWithContainer>

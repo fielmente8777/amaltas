@@ -5,10 +5,11 @@ import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import { LocationPinIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
 import LazyLoadedVideo from "@/src/components/Video/LazyLoadedVideo";
-
-import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
+import { getWhatsAppUrl } from "@/src/utils/constent";
+import { useWebContext } from "@/src/context-api/WebContext";
 
 export const Location: React.FC = () => {
+  const { setIsOpenFormPopUp } = useWebContext();
 
   return (
     <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
@@ -64,7 +65,7 @@ export const Location: React.FC = () => {
               </a>
 
               <button
-                onClick={scrollToForm}
+                onClick={() => setIsOpenFormPopUp(true)}
                 className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
               >
                 <BookNowIcon className="w-3.5 h-3.5 text-white" />

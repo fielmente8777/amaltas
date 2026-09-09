@@ -20,7 +20,7 @@ export const LandingFooter: React.FC = () => {
             <Form1 />
           </div>
 
-          <p className="text-xs sm:text-[14px] text-white pt-0.5 sm:pt-2 font-open-sans tracking-wide">
+          <p className="font-open-sans font-normal text-[14px] leading-[20px] tracking-normal text-white text-center pt-4">
             Save 15% when you book direct · Free cancellation on most dates*
           </p>
         </div>

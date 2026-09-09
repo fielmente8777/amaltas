@@ -4,10 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
-
-import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
+import { getWhatsAppUrl } from "@/src/utils/constent";
+import { useWebContext } from "@/src/context-api/WebContext";
 
 export const About: React.FC = () => {
+  const { setIsOpenFormPopUp } = useWebContext();
 
   return (
     <section className="relative w-full bg-[#EEEEDC] py-16 sm:py-20 md:py-28 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
@@ -59,7 +60,7 @@ export const About: React.FC = () => {
             </a>
 
             <button
-              onClick={scrollToForm}
+              onClick={() => setIsOpenFormPopUp(true)}
               className="w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
             >
               <BookNowIcon className="w-3.5 h-3.5 text-white" />
@@ -89,7 +90,7 @@ export const About: React.FC = () => {
             </a>
 
             <button
-              onClick={scrollToForm}
+              onClick={() => setIsOpenFormPopUp(true)}
               className="flex-1 h-[42px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
             >
               <BookNowIcon className="w-3.5 h-3.5 text-white" />

@@ -62,57 +62,12 @@ const useBookingForm = ({
   const debouncedName = useDebounce(formData.name, 500);
 
   const validateEmail = (email: string): boolean =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   const validatePhone = (phone: string): boolean => {
     const re = /^[0-9]{10,15}$/;
-    return re.test(phone);
+    return re.test(phone.trim());
   };
-
-  // Debounced Email Validation
-  useEffect(() => {
-    if (debouncedEmail && !validateEmail(debouncedEmail)) {
-      setErrors((prev) => ({
-        ...prev,
-        email: "Invalid email format",
-      }));
-    } else if (debouncedEmail && validateEmail(debouncedEmail)) {
-      setErrors((prev) => ({
-        ...prev,
-        email: undefined,
-      }));
-    }
-  }, [debouncedEmail]);
-
-  // Debounced Phone Validation
-  useEffect(() => {
-    if (debouncedPhone && !validatePhone(debouncedPhone)) {
-      setErrors((prev) => ({
-        ...prev,
-        phone: "Phone must be 10-15 digits",
-      }));
-    } else if (debouncedPhone && validatePhone(debouncedPhone)) {
-      setErrors((prev) => ({
-        ...prev,
-        phone: undefined,
-      }));
-    }
-  }, [debouncedPhone]);
-
-  // Debounced Name Validation
-  useEffect(() => {
-    if (debouncedName && !debouncedName.trim()) {
-      setErrors((prev) => ({
-        ...prev,
-        name: "Name cannot be empty",
-      }));
-    } else if (debouncedName && debouncedName.trim()) {
-      setErrors((prev) => ({
-        ...prev,
-        name: undefined,
-      }));
-    }
-  }, [debouncedName]);
 
   const validateForm = useCallback(() => {
     const newErrors: FormErrors = {};
@@ -123,12 +78,18 @@ const useBookingForm = ({
       isValid = false;
     }
 
-    if (!validatePhone(formData.phone)) {
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+      isValid = false;
+    } else if (!validatePhone(formData.phone)) {
       newErrors.phone = "Phone must be 10-15 digits";
       isValid = false;
     }
 
-    if (!validateEmail(formData.email)) {
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!validateEmail(formData.email)) {
       newErrors.email = "Invalid email format";
       isValid = false;
     }
@@ -138,29 +99,24 @@ const useBookingForm = ({
       isValid = false;
     }
 
-    if (includeCheckOut && !formData.checkOut) {
-      newErrors.checkOut = "Check-out date is required";
-      isValid = false;
-    }
-
     setErrors(newErrors);
     return isValid;
-  }, [formData, includeCheckIn, includeCheckOut]);
+  }, [formData, includeCheckIn]);
 
-  // handle form submission
+  // handle input change
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
-    // Clear error for this field
+    // Clear error for this field when user types
     if (errors[name as keyof FormErrors]) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        [name]: "",
+        [name]: undefined,
       }));
     }
   };
@@ -174,7 +130,7 @@ const useBookingForm = ({
     if (errors[field as keyof FormErrors]) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        [field]: "",
+        [field]: undefined,
       }));
     }
   };

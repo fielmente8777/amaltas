@@ -3,7 +3,7 @@ export const landingPageData = {
     "Direct Booking Offer: Save 15% + Free Breakfast",
   ],
   hero: {
-    logo: "/logo.png",
+    logo: "/logo-image1.png",
     tag: "AMALTAS BY JUNGLE DIARIES · JIM CORBETT",
     title: "<span class=\"font-bold\">Leave the city behind.</span><br/><span class=\"font-normal\">Let the </span><span class=\"italic font-light\">forest</span><span class=\"font-normal\"> set the pace.</span>",
     description: "A boutique villa on Dhela Road, built for a slower, more personal Corbett.",
@@ -154,9 +154,7 @@ export const landingPageData = {
     images: [
       "/gallery/gallery-s1.jpg",
       "/gallery/gallery-s2.jpg",
-      "/gallery/gallery-s3.jpg",
-      "/gallery/gallery-s4.jpg",
-      "/gallery/gallery-s5.jpg",
+      "/rooms/d-room2.jpg",
       "/gallery/gallery-s3.jpg",
       "/gallery/gallery-s4.jpg",
       "/gallery/gallery-s5.jpg",

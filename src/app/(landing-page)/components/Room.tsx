@@ -7,7 +7,8 @@ import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
 import { Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
-import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
+import { getWhatsAppUrl } from "@/src/utils/constent";
+import { useWebContext } from "@/src/context-api/WebContext";
 
 interface RoomItemProps {
   room: {
@@ -20,14 +21,13 @@ interface RoomItemProps {
     images?: string[];
   };
   isEven: boolean;
-  scrollToForm: () => void;
 }
 
 const RoomCard: React.FC<RoomItemProps> = ({
   room,
   isEven,
-  scrollToForm,
 }) => {
+  const { setIsOpenFormPopUp } = useWebContext();
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
   const images = room.images && room.images.length > 0 ? room.images : [room.image];
 
@@ -131,7 +131,7 @@ const RoomCard: React.FC<RoomItemProps> = ({
           </a>
 
           <button
-            onClick={scrollToForm}
+            onClick={() => setIsOpenFormPopUp(true)}
             className="flex-1 sm:flex-initial w-full sm:w-[160px] h-[40px] sm:h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] rounded-[4px] text-xs sm:text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
           >
             <BookNowIcon className="w-3.5 h-3.5 text-white" />
@@ -174,7 +174,6 @@ export const Room: React.FC = () => {
               key={room.id}
               room={room}
               isEven={index % 2 === 0}
-              scrollToForm={scrollToForm}
             />
           ))}
         </div>

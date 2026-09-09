@@ -59,7 +59,7 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
         <div className="w-full px-4 sm:px-6 md:px-12 lg:px-16">
           <div className="space-y-2.5 sm:space-y-3 w-full text-left max-w-full">
             {/* TAG BADGE */}
-            <p className="inline-flex md:flex items-center justify-start md:justify-center w-fit md:w-[376px] max-w-full h-auto py-1 px-3 sm:py-1.5 sm:px-3.5 md:h-[34px] md:py-0 bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-full text-[12px] sm:text-[14px] md:text-xs text-white uppercase tracking-widest font-dm-sans font-medium truncate">
+            <p className="flex items-center justify-center w-fit sm:w-[376px] max-w-full h-[34px] px-4 sm:px-0 bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-full text-[12px] text-white uppercase tracking-[2.3px] font-dm-sans font-semibold text-center truncate">
               {hero.tag}
             </p>
 

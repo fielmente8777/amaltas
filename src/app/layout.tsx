@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Fraunces, Varela_Round, Inter, DM_Sans, Open_Sans, Manrope } from "next/font/google";
 import "./globals.css";
+import { WebProvider } from "../context-api/WebContext";
+import PopUpForm from "../components/pop-up/PopUpForm";
+import ImagePopup from "../components/pop-up/ImagePopup";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -57,7 +60,11 @@ export default function RootLayout({
       className={`${fraunces.variable} ${varelaRound.variable} ${inter.variable} ${dmSans.variable} ${openSans.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#EEEEDC] text-[#5F6764]">
-        {children}
+        <WebProvider>
+          {children}
+          <PopUpForm />
+          <ImagePopup />
+        </WebProvider>
       </body>
     </html>
   );
