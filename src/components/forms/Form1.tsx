@@ -53,12 +53,14 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       onSubmit={handleSubmit}
       noValidate
       className={`flex flex-wrap ${
-        gridView ? "flex-col gap-3.5 w-full" : "items-center justify-center gap-x-4 gap-y-3"
+        gridView
+          ? "flex-col gap-3.5 w-full"
+          : "flex-col sm:flex-row items-center justify-center gap-3 sm:gap-x-4 sm:gap-y-3 w-full"
       } font-open-sans font-normal text-[14px] leading-[20px] tracking-normal bg-transparent`}
     >
       {/* 1. Name Field */}
-      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "items-center gap-2"}`}>
-        <div className={`flex items-center gap-2 bg-[#FAF8F5] ${gridView ? "w-full" : "w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
+      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
+        <div className={`flex items-center gap-2 bg-[#FAF8F5] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
           <label className="text-gray-700 text-sm shrink-0 flex items-center justify-center">
             <UserIcon />
           </label>
@@ -79,8 +81,8 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       </div>
 
       {/* 2. Phone Field with Country Code */}
-      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "items-center gap-2"}`}>
-        <div className={`flex items-center gap-1.5 bg-[#FAF8F5] ${gridView ? "w-full" : "w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
+      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
+        <div className={`flex items-center gap-1.5 bg-[#FAF8F5] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
           <label className="text-gray-700 text-sm shrink-0 flex items-center justify-center">
             <CallIcon />
           </label>
@@ -112,8 +114,8 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       </div>
 
       {/* 3. Email Field */}
-      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "items-center gap-2"}`}>
-        <div className={`flex items-center gap-2 bg-[#FAF8F5] ${gridView ? "w-full" : "w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
+      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
+        <div className={`flex items-center gap-2 bg-[#FAF8F5] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
           <label className="text-gray-700 text-sm shrink-0 flex items-center justify-center">
             <MailIcon />
           </label>
@@ -134,8 +136,8 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       </div>
 
       {/* 4. Check-in & out Date Field */}
-      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "items-center gap-2"}`}>
-        <div className={`flex items-center gap-2 bg-[#FAF8F5] ${gridView ? "w-full" : "w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
+      <div className={`flex ${gridView ? "flex-col gap-1 w-full" : "flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full sm:w-auto"}`}>
+        <div className={`flex items-center gap-2 bg-[#FAF8F5] ${gridView ? "w-full" : "w-full sm:w-[224px]"} h-[36px] p-[8px] rounded-[4px] border-[0.5px] border-[#D6D2C7] focus-within:border-gray-400 shrink-0`}>
           <label className="text-gray-700 text-sm shrink-0 flex items-center justify-center">
             <CalendarIcon />
           </label>
@@ -158,11 +160,11 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       </div>
 
       {/* 5. Submit Button */}
-      <div className={`flex ${gridView ? "w-full mt-2" : "items-center"}`}>
+      <div className={`flex ${gridView ? "w-full mt-2" : "w-full sm:w-auto sm:items-center"}`}>
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`bg-[#B58A4A] hover:bg-[#9e773c] text-white ${gridView ? "w-full" : "w-[180px]"} h-[36px] px-[16px] py-[8px] rounded-[4px] font-open-sans font-normal text-[14px] leading-[20px] tracking-normal flex items-center justify-center text-center gap-[8px] transition-all shadow-md cursor-pointer active:scale-95 disabled:opacity-75 whitespace-nowrap shrink-0`}
+          className={`bg-[#B58A4A] hover:bg-[#9e773c] text-white ${gridView ? "w-full" : "w-full sm:w-[180px]"} h-[36px] px-[16px] py-[8px] rounded-[4px] font-open-sans font-normal text-[14px] leading-[20px] tracking-normal flex items-center justify-center text-center gap-[8px] transition-all shadow-md cursor-pointer active:scale-95 disabled:opacity-75 whitespace-nowrap shrink-0`}
         >
           <BookingCalenderIcon /> {isSubmitting ? "Submitting..." : "Book Now"}
         </button>

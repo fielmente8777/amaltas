@@ -22,14 +22,14 @@ export const Gallery: React.FC = () => {
   const images = landingPageData.gallery.images;
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 border-b border-[#D6D2C7] overflow-hidden">
+    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
       <div className="max-w-[1320px] mx-auto space-y-4 sm:space-y-8 md:space-y-10">
         {/* Section Header */}
-        <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 max-w-3xl mx-auto">
-          <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
+        <div className="text-center max-w-3xl mx-auto flex flex-col items-center">
+          <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans mb-[12px]">
             {landingPageData.gallery.tag}
           </p>
-          <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A]">
+          <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] mb-[16px]">
             {landingPageData.gallery.heading}
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-[#5F6764] font-manrope">

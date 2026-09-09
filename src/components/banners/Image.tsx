@@ -56,10 +56,10 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
 
       {/* OVERLAY & TEXT CONTENT */}
       <div className="absolute inset-0 z-20 flex items-end pb-4 sm:pb-5 md:pb-6">
-        <div className="w-full px-4 sm:px-6 md:px-12 lg:px-16">
+        <div className="w-full px-4 sm:px-6 md:pl-[104px] lg:pl-[104px] md:pr-12 lg:pr-16">
           <div className="space-y-2.5 sm:space-y-3 w-full text-left max-w-full">
             {/* TAG BADGE */}
-            <p className="flex items-center justify-center w-fit sm:w-[376px] max-w-full h-[34px] px-4 sm:px-0 bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-full text-[12px] text-white uppercase tracking-[2.3px] font-dm-sans font-semibold text-center truncate">
+            <p className="flex items-center justify-center w-fit sm:w-[376px] max-w-full h-[34px] px-3 sm:px-0 bg-white/10 backdrop-blur-[12px] border border-white/20 rounded-full text-[10px] sm:text-[12px] text-white uppercase tracking-[1.5px] sm:tracking-[2.3px] font-dm-sans font-semibold text-center whitespace-nowrap">
               {hero.tag}
             </p>
 
@@ -73,7 +73,7 @@ const ImageB: React.FC<ImageBannerProps> = ({ hero }) => {
       </div>
 
       {/* SWIPER NAV ARROWS (Hidden on mobile, visible on desktop) */}
-      <div className="hidden md:flex absolute bottom-3 right-3 sm:bottom-5 sm:right-5 md:bottom-6 md:right-8 z-30 items-center gap-1.5 sm:gap-2 md:gap-3">
+      <div className="hidden md:flex absolute bottom-3 right-3 sm:bottom-5 sm:right-5 md:bottom-6 md:right-[64px] lg:right-[64px] z-30 items-center gap-1.5 sm:gap-2 md:gap-3">
         <button
           type="button"
           className="image-banner-prev flex items-center justify-center cursor-pointer w-[26px] h-[26px] sm:w-[32px] sm:h-[32px] md:w-[40px] md:h-[40px] [&>svg]:w-full [&>svg]:h-full active:opacity-75 md:transition-transform md:hover:scale-105 md:active:scale-95"
