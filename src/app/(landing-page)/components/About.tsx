@@ -53,7 +53,7 @@ export const About: React.FC = () => {
               href={getWhatsAppUrl("About")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
+              className="w-[160px] h-[44px] flex items-center justify-center uppercase gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
               Enquire Now
@@ -61,7 +61,7 @@ export const About: React.FC = () => {
 
             <button
               onClick={() => setIsOpenFormPopUp(true)}
-              className="w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
+              className="w-[160px] h-[44px] flex items-center justify-center uppercase gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
             >
               <BookNowIcon className="w-3.5 h-3.5 text-white" />
               Book Now
@@ -83,7 +83,7 @@ export const About: React.FC = () => {
               href={getWhatsAppUrl("About")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 h-[42px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
+              className="flex-1 h-[42px] flex items-center justify-center gap-[8px] uppercase bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
               Enquire Now
@@ -91,7 +91,7 @@ export const About: React.FC = () => {
 
             <button
               onClick={() => setIsOpenFormPopUp(true)}
-              className="flex-1 h-[42px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
+              className="flex-1 h-[42px] flex items-center justify-center gap-[8px] uppercase bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
             >
               <BookNowIcon className="w-3.5 h-3.5 text-white" />
               Book Now

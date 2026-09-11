@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Fraunces, Varela_Round, Inter, DM_Sans, Open_Sans, Manrope } from "next/font/google";
+import {
+  Fraunces,
+  Varela_Round,
+  Inter,
+  DM_Sans,
+  Open_Sans,
+  Manrope,
+} from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import { WebProvider } from "../context-api/WebContext";
 import PopUpForm from "../components/pop-up/PopUpForm";
 import ImagePopup from "../components/pop-up/ImagePopup";
+import { contact } from "../utils/constent";
+import Call from "../components/ContactButton/Call";
+import Whatsapp from "../components/ContactButton/WhatsApp";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -46,7 +57,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "Amaltas Villa by Jungle Diaries | Jim Corbett",
-  description: "Leave the city behind. Let the forest set the pace. A boutique luxury villa on Dhela Road, Jim Corbett.",
+  description:
+    "Leave the city behind. Let the forest set the pace. A boutique luxury villa on Dhela Road, Jim Corbett.",
 };
 
 export default function RootLayout({
@@ -64,9 +76,24 @@ export default function RootLayout({
           {children}
           <PopUpForm />
           <ImagePopup />
+
+          <Whatsapp whatsAppNumber={contact.phone} />
+          <Call callNumber={contact.phone} />
         </WebProvider>
       </body>
+
+      <Script id="chatbot-config" strategy="afterInteractive">
+        {`
+    window.eazbotConfig = {
+       ndid: "3b6fb698-ab43-4bdc-a1a9-eac76af9d3be",
+       hid: "40177727",
+    };
+  `}
+      </Script>
+      <Script
+        src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }
-

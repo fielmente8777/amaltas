@@ -58,7 +58,7 @@ export const Location: React.FC = () => {
                 href={getWhatsAppUrl("Location")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
+                className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
               >
                 <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
                 Enquire Now
@@ -66,7 +66,7 @@ export const Location: React.FC = () => {
 
               <button
                 onClick={() => setIsOpenFormPopUp(true)}
-                className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
+                className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
               >
                 <BookNowIcon className="w-3.5 h-3.5 text-white" />
                 Book Now

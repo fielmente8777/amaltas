@@ -76,6 +76,8 @@ export const Gallery: React.FC = () => {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             className="w-full !overflow-hidden"
           >
+
+            
             {images.map((src, index) => (
               <SwiperSlide key={index} className="flex justify-center items-center">
                 <div className="w-full  relative aspect-[4/2] overflow-hidden rounded-[8px] shadow-lg">
@@ -96,7 +98,7 @@ export const Gallery: React.FC = () => {
             type="button"
             onClick={() => swiperInstance?.slidePrev()}
             aria-label="Previous gallery image"
-            className="absolute left-3 sm:left-[10%] md:left-[26.5%] lg:left-[27%] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
+            className="absolute left-1.5 sm:left-[10%] md:left-[26.5%] lg:left-[27%] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.8] sm:scale-100"
           >
             <BtnPrevIcon />
           </button>
@@ -104,7 +106,7 @@ export const Gallery: React.FC = () => {
             type="button"
             onClick={() => swiperInstance?.slideNext()}
             aria-label="Next gallery image"
-            className="absolute right-3 sm:right-[10%] md:right-[26.5%] lg:right-[27%] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-90 sm:scale-100"
+            className="absolute right-1.5 sm:right-[10%] md:right-[26.5%] lg:right-[27%] top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.8] sm:scale-100"
           >
             <BtnNextIcon />
           </button>
@@ -116,7 +118,7 @@ export const Gallery: React.FC = () => {
             href={getWhatsAppUrl("Gallery")}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
+            className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
           >
             <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
             Enquire Now
@@ -124,7 +126,7 @@ export const Gallery: React.FC = () => {
 
           <button
             onClick={() => setIsOpenFormPopUp(true)}
-            className="flex-1 sm:flex-initial w-[160px] h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
+            className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
           >
             <BookNowIcon className="w-3.5 h-3.5 text-white" />
             Book Now

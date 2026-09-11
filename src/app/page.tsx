@@ -57,6 +57,6 @@ export default function LandingPage() {
         <Reviews />
         <LandingFooter />
       </main>
-    </div>
+      </div>
   );
 }
