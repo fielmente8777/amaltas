@@ -70,7 +70,7 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#B58A4A] hover:bg-[#9e773c] w-full rounded-lg text-white font-medium py-3 sm:py-3.5 transition-colors shadow-md cursor-pointer flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wide shrink-0"
+        className="bg-[#B58A4A] hover:bg-[#9e773c] w-full rounded-lg text-white font-medium py-3 sm:py-3.5 transition-colors shadow-md cursor-pointer flex items-center justify-center gap-2 text-xs sm:text-sm tracking-wide shrink-0"
       >
         {isSubmitting ? (
           "Submitting..."

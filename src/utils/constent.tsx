@@ -1,15 +1,15 @@
 export const WHATSAPP_NUMBER = "+918868888494";
 export const PHONE_NUMBER = "+918868888494";
-export const EMAIL_ADDRESS = "demo@gmail.com";
+export const EMAIL_ADDRESS = "amaltasbythejunglediaries@gmail.com";
 export const LOCATION_ADDRESS = "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand";
 export const enCodeText = (text: string) => encodeURIComponent(text);
 export const contact: any = {
   phone: "+918868888494",
-  email: "demo@gmail.com",
+  email: "amaltasbythejunglediaries@gmail.com",
   location: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
-  addressLink: "https://maps.google.com",
-  formDomain: "amaltas",
-  formHid: "12345",
+  addressLink: "",
+  formDomain: "Amaltas",
+  formHid: "",
 };
 export const getWhatsAppUrl = (sectionOrEvent?: any) => {
   const number = "918868888494";
@@ -32,3 +32,4 @@ export const scrollToForm = () => {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   }
 };
+
