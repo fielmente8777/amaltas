@@ -81,7 +81,7 @@ export default function RootLayout({
       <Script id="chatbot-config" strategy="afterInteractive">
         {`
     window.eazbotConfig = {
-       ndid: "3b6fb698-ab43-4bdc-a1a9-eac76af9d3be",
+       ndid: "e7412596-2721-426a-89d5-5fb91117b507",
        hid: "40177727",
     };
   `}
