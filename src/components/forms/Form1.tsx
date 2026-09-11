@@ -11,6 +11,7 @@ import {
   UserIcon,
   BookingCalenderIcon,
 } from "@/src/utils/formIcons";
+import { countries } from "@/src/utils/constent";
 
 interface Form1Props {
   gridView?: boolean;
@@ -90,12 +91,17 @@ const Form1: React.FC<Form1Props> = ({ gridView = false }) => {
             name="countryCode"
             value={formData.countryCode}
             onChange={handleChange}
-            className="bg-transparent outline-none text-gray-800 font-open-sans font-normal text-[14px] leading-[20px] cursor-pointer shrink-0"
+            className="bg-transparent outline-none text-gray-800 font-open-sans font-normal text-[14px] leading-[20px] cursor-pointer shrink-0 max-w-[65px]"
           >
-            <option value="+91">+91</option>
-            <option value="+1">+1</option>
-            <option value="+44">+44</option>
-            <option value="+971">+971</option>
+            {countries.map((country, index) => (
+              <option
+                key={`${country.name}-${country.code}-${index}`}
+                value={country.code}
+                className="bg-white text-gray-900"
+              >
+                {country.code}
+              </option>
+            ))}
           </select>
           <input
             type="tel"

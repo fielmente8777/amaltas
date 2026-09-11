@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
-import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
+import { BtnNextIcon, BtnPrevIcon } from "@/src/utils/icons";
+import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -12,11 +13,8 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
-import { getWhatsAppUrl } from "@/src/utils/constent";
-import { useWebContext } from "@/src/context-api/WebContext";
 
 export const Gallery: React.FC = () => {
-  const { setIsOpenFormPopUp } = useWebContext();
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   const images = landingPageData.gallery.images;
@@ -113,25 +111,7 @@ export const Gallery: React.FC = () => {
         </div>
 
         {/* SECTION CTAS DIRECTLY BELOW CAROUSEL */}
-        <div className="flex flex-row items-center justify-center gap-[12px] pt-1 sm:pt-4 font-open-sans">
-          <a
-            href={getWhatsAppUrl("Gallery")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
-          >
-            <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-            Enquire Now
-          </a>
-
-          <button
-            onClick={() => setIsOpenFormPopUp(true)}
-            className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
-          >
-            <BookNowIcon className="w-3.5 h-3.5 text-white" />
-            Book Now
-          </button>
-        </div>
+        <SectionActionButtons section="Gallery" className="justify-center pt-1 sm:pt-4" />
       </div>
     </section>
   );

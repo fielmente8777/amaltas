@@ -3,12 +3,9 @@
 import React, { useState } from "react";
 import { IoAdd, IoRemove } from "react-icons/io5";
 import { landingPageData } from "./pagedata";
-import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
-import { getWhatsAppUrl } from "@/src/utils/constent";
-import { useWebContext } from "@/src/context-api/WebContext";
+import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 
 export const Faqs: React.FC = () => {
-  const { setIsOpenFormPopUp } = useWebContext();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
@@ -35,25 +32,7 @@ export const Faqs: React.FC = () => {
             />
 
             {/* Desktop CTAs on Left Column */}
-            <div className="hidden lg:flex flex-row items-center gap-[12px] pt-1 sm:pt-4 font-open-sans">
-              <a
-                href={getWhatsAppUrl("FAQs")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-[160px] h-[44px] flex items-center uppercase justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
-              >
-                <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-                Enquire Now
-              </a>
-
-              <button
-                onClick={() => setIsOpenFormPopUp(true)}
-                className="w-[160px] h-[44px] flex items-center uppercase justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
-              >
-                <BookNowIcon className="w-3.5 h-3.5 text-white" />
-                Book Now
-              </button>
-            </div>
+            <SectionActionButtons section="FAQs" className="hidden lg:flex pt-1 sm:pt-4" />
           </div>
 
           {/* Right Column: FAQ Accordion (Width: Fixed 647px on lg, Height: Hug) */}
@@ -95,25 +74,7 @@ export const Faqs: React.FC = () => {
             </div>
 
             {/* Mobile CTAs (Positioned below accordion on mobile) */}
-            <div className="flex lg:hidden flex-row items-center gap-[12px] pt-6 font-open-sans w-full">
-              <a
-                href={getWhatsAppUrl("FAQs")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 h-[44px] flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
-              >
-                <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-                Enquire Now
-              </a>
-
-              <button
-                onClick={() => setIsOpenFormPopUp(true)}
-                className="flex-1 h-[44px] flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
-              >
-                <BookNowIcon className="w-3.5 h-3.5 text-white" />
-                Book Now
-              </button>
-            </div>
+            <SectionActionButtons section="FAQs" className="flex lg:hidden pt-6 w-full" />
           </div>
         </div>
       </div>

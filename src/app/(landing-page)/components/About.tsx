@@ -3,13 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
-import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
-import { getWhatsAppUrl } from "@/src/utils/constent";
-import { useWebContext } from "@/src/context-api/WebContext";
+import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 
 export const About: React.FC = () => {
-  const { setIsOpenFormPopUp } = useWebContext();
-
   return (
     <section className="relative w-full bg-[#EEEEDC] py-16 sm:py-20 md:py-28 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
       {/* Top-Left Leaf Background Decoration */}
@@ -48,25 +44,7 @@ export const About: React.FC = () => {
           </h2>
 
           {/* Desktop Only Buttons */}
-          <div className="hidden lg:flex flex-row items-center gap-[12px] pt-2 sm:pt-3 font-open-sans">
-            <a
-              href={getWhatsAppUrl("About")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-[160px] h-[44px] flex items-center justify-center uppercase gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-              Enquire Now
-            </a>
-
-            <button
-              onClick={() => setIsOpenFormPopUp(true)}
-              className="w-[160px] h-[44px] flex items-center justify-center uppercase gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
-            >
-              <BookNowIcon className="w-3.5 h-3.5 text-white" />
-              Book Now
-            </button>
-          </div>
+          <SectionActionButtons section="About" className="hidden lg:flex pt-2 sm:pt-3" />
         </div>
 
         {/* Right Column: Paragraph Text & Mobile Buttons Below Description */}
@@ -78,25 +56,7 @@ export const About: React.FC = () => {
           ))}
 
           {/* Mobile Only Buttons (Positioned below description) */}
-          <div className="flex lg:hidden flex-row items-center gap-3 pt-3 sm:pt-4 font-open-sans w-full">
-            <a
-              href={getWhatsAppUrl("About")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 h-[42px] flex items-center justify-center gap-[8px] uppercase bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-sm cursor-pointer whitespace-nowrap"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-              Enquire Now
-            </a>
-
-            <button
-              onClick={() => setIsOpenFormPopUp(true)}
-              className="flex-1 h-[42px] flex items-center justify-center gap-[8px] uppercase bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] rounded-[4px] text-xs sm:text-sm font-normal transition-all shadow-md cursor-pointer whitespace-nowrap"
-            >
-              <BookNowIcon className="w-3.5 h-3.5 text-white" />
-              Book Now
-            </button>
-          </div>
+          <SectionActionButtons section="About" compact className="flex lg:hidden pt-3 sm:pt-4 w-full" />
         </div>
       </div>
     </section>
