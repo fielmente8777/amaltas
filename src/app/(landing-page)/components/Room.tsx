@@ -6,8 +6,8 @@ import { landingPageData } from "./pagedata";
 import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
 import { Navigation, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
-import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
+import { BtnNextIcon, BtnPrevIcon } from "@/src/utils/icons";
+import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 
 interface RoomItemProps {
   room: {
@@ -20,13 +20,11 @@ interface RoomItemProps {
     images?: string[];
   };
   isEven: boolean;
-  scrollToForm: () => void;
 }
 
 const RoomCard: React.FC<RoomItemProps> = ({
   room,
   isEven,
-  scrollToForm,
 }) => {
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
   const images = room.images && room.images.length > 0 ? room.images : [room.image];
@@ -62,8 +60,27 @@ const RoomCard: React.FC<RoomItemProps> = ({
           )}
         />
 
-        {/* Swiper Arrow Buttons: Flow Horizontal, Width: 88px, Height: 40px, Top: 454px, Left: 21px, Gap: 8px */}
-        <div className="absolute z-20 flex flex-row items-center gap-[8px] w-[88px] h-[40px] left-[14px] sm:left-[21px] bottom-[14px] sm:bottom-[18px] lg:bottom-auto lg:top-[454px] lg:left-[21px]">
+        {/* Mobile Navigation Arrow Buttons (Left & Right edges, vertically centered - 32px size & left/right-1.5) */}
+        <button
+          type="button"
+          onClick={() => swiperInstance?.slidePrev()}
+          aria-label="Previous photo"
+          className="lg:hidden absolute left-1.5 sm:left-4 top-1/2 -translate-y-1/2 z-20 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.8] sm:scale-100"
+        >
+          <BtnPrevIcon />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => swiperInstance?.slideNext()}
+          aria-label="Next photo"
+          className="lg:hidden absolute right-1.5 sm:right-4 top-1/2 -translate-y-1/2 z-20 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.8] sm:scale-100"
+        >
+          <BtnNextIcon />
+        </button>
+
+        {/* Desktop Navigation Buttons: Flow Horizontal, Width: 88px, Height: 40px, Top: 454px, Left: 21px, Gap: 8px */}
+        <div className="hidden lg:flex absolute z-20 flex-row items-center gap-[8px] w-[88px] h-[40px] top-[454px] left-[21px]">
           <button
             type="button"
             onClick={() => swiperInstance?.slidePrev()}
@@ -119,25 +136,7 @@ const RoomCard: React.FC<RoomItemProps> = ({
         </div>
 
         {/* Actions */}
-        <div className="flex flex-row items-center gap-2.5 sm:gap-[12px] font-open-sans mt-4 sm:mt-5 lg:mt-[25px]">
-          <a
-            href={getWhatsAppUrl(room.title)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 sm:flex-initial w-full sm:w-[160px] h-[40px] sm:h-[44px] flex items-center uppercase justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] rounded-[4px] text-xs sm:text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
-          >
-            <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-            Enquire Now
-          </a>
-
-          <button
-            onClick={scrollToForm}
-            className="flex-1 sm:flex-initial w-full sm:w-[160px] h-[40px] sm:h-[44px] flex items-center uppercase justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] rounded-[4px] text-xs sm:text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
-          >
-            <BookNowIcon className="w-3.5 h-3.5 text-white" />
-            Book Now
-          </button>
-        </div>
+        <SectionActionButtons section={room.title} compact className="mt-4 sm:mt-5 lg:mt-[25px]" />
       </div>
     </div>
   );
@@ -174,7 +173,6 @@ export const Room: React.FC = () => {
               key={room.id}
               room={room}
               isEven={index % 2 === 0}
-              scrollToForm={scrollToForm}
             />
           ))}
         </div>

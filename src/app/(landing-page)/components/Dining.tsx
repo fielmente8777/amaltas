@@ -3,12 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
-import { WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
-
-import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
+import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 
 export const Dining: React.FC = () => {
-
   return (
     <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
       <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-14">
@@ -62,25 +59,7 @@ export const Dining: React.FC = () => {
         </div>
 
         {/* Centered CTAs at Bottom */}
-        <div className="flex flex-row items-center justify-center gap-[12px] pt-1 sm:pt-4 font-open-sans">
-          <a
-            href={getWhatsAppUrl("Dining")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
-          >
-            <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-            Enquire Now
-          </a>
-
-          <button
-            onClick={scrollToForm}
-            className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
-          >
-            <BookNowIcon className="w-3.5 h-3.5 text-white" />
-            Book Now
-          </button>
-        </div>
+        <SectionActionButtons section="Dining" className="justify-center pt-1 sm:pt-4" />
       </div>
     </section>
   );

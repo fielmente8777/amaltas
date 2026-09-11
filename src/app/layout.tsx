@@ -10,6 +10,8 @@ import {
 import "./globals.css";
 import Script from "next/script";
 import { WebProvider } from "../context-api/WebContext";
+import PopUpForm from "../components/pop-up/PopUpForm";
+import ImagePopup from "../components/pop-up/ImagePopup";
 import { contact } from "../utils/constent";
 import Call from "../components/ContactButton/Call";
 import Whatsapp from "../components/ContactButton/WhatsApp";
@@ -72,6 +74,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans bg-[#EEEEDC] text-[#5F6764]">
         <WebProvider>
           {children}
+          <PopUpForm />
+          <ImagePopup />
 
           <Whatsapp whatsAppNumber={contact.phone} />
           <Call callNumber={contact.phone} />

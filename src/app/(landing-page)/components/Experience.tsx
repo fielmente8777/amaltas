@@ -5,11 +5,11 @@ import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import SwiperCarousel from "@/src/components/sliders/SwiperCarousel";
 import { Navigation, Autoplay } from "swiper/modules";
-import { BtnNextIcon, BtnPrevIcon, WhatsAppIcon, BookNowIcon } from "@/src/utils/icons";
+import { BtnNextIcon, BtnPrevIcon } from "@/src/utils/icons";
+import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
+import { contact } from "@/src/utils/constent";
 
 import type { Swiper as SwiperType } from "swiper";
-
-import { getWhatsAppUrl, scrollToForm } from "@/src/utils/constent";
 
 export const Experience: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
@@ -49,7 +49,7 @@ export const Experience: React.FC = () => {
           swiperSlideClassName="!h-auto"
           renderSlide={(card) => (
             <a
-              href={getWhatsAppUrl(card.title)}
+              href={contact.WhatsappCta}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative block h-[390px] sm:h-[460px] lg:h-[520px] w-full overflow-hidden cursor-pointer"
@@ -82,7 +82,7 @@ export const Experience: React.FC = () => {
         <button
           type="button"
           onClick={() => swiperInstance?.slidePrev()}
-          className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.75] sm:scale-90 lg:scale-100"
+          className="absolute left-1.5 sm:left-4 top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.8] sm:scale-90 lg:scale-100"
           aria-label="Previous experience"
         >
           <BtnPrevIcon />
@@ -91,7 +91,7 @@ export const Experience: React.FC = () => {
         <button
           type="button"
           onClick={() => swiperInstance?.slideNext()}
-          className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.75] sm:scale-90 lg:scale-100"
+          className="absolute right-1.5 sm:right-4 top-1/2 -translate-y-1/2 z-30 transition-transform active:opacity-75 cursor-pointer drop-shadow-md flex items-center justify-center scale-[0.8] sm:scale-90 lg:scale-100"
           aria-label="Next experience"
         >
           <BtnNextIcon />
@@ -99,25 +99,7 @@ export const Experience: React.FC = () => {
       </div>
 
       {/* Global Section CTAs */}
-      <div className="flex flex-row items-center justify-center gap-[12px] pt-5 sm:pt-10 px-4 sm:px-6 font-open-sans">
-        <a
-          href={getWhatsAppUrl("Experiences")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-white hover:bg-gray-50 text-[#30402A] border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-sm whitespace-nowrap"
-        >
-          <WhatsAppIcon className="w-4 h-4 text-[#30402A]" />
-          Enquire Now
-        </a>
-
-        <button
-          onClick={scrollToForm}
-          className="flex-1 sm:flex-initial w-[160px] h-[44px] uppercase flex items-center justify-center gap-[8px] bg-[#30402A] hover:bg-[#243120] text-white border border-[#30402A] px-[16px] py-[12px] rounded-[4px] text-sm font-normal transition-all cursor-pointer shadow-md whitespace-nowrap"
-        >
-          <BookNowIcon className="w-3.5 h-3.5 text-white" />
-          Book Now
-        </button>
-      </div>
+      <SectionActionButtons section="Experiences" className="justify-center pt-5 sm:pt-10 px-4 sm:px-6" />
     </section>
   );
 };
