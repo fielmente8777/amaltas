@@ -5,6 +5,7 @@ import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 
+
 export const Dining: React.FC = () => {
   return (
     <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
