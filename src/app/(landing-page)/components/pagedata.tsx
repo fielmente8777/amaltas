@@ -224,6 +224,21 @@ export const landingPageData = {
         author: "Vikram & Friends",
         type: "GROUP · GURUGRAM",
       },
+      {
+        quote: "The attention to detail, tranquil surroundings, and personalized hospitality made our holiday truly special.",
+        author: "Ananya & Kabir",
+        type: "COUPLE · NOIDA",
+      },
+      {
+        quote: "Delicious authentic Kumaoni meals and peaceful morning walks in nature right by our villa. A hidden gem!",
+        author: "Meera & Rajesh",
+        type: "FAMILY · JAIPUR",
+      },
+      {
+        quote: "Exceptional service, immaculate rooms, and great proximity to Jim Corbett safari zones. We will definitely return.",
+        author: "Siddharth & Friends",
+        type: "GROUP · MUMBAI",
+      },
     ],
   },
   contact: {
