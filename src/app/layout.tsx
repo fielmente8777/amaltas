@@ -71,6 +71,20 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${varelaRound.variable} ${inter.variable} ${dmSans.variable} ${openSans.variable} ${manrope.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-EDV333KPWB"
+        ></script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDV333KPWB');`}
+        </Script>
+      </head>
+
       <body className="min-h-full flex flex-col font-sans bg-[#EEEEDC] text-[#5F6764]">
         <WebProvider>
           {children}
