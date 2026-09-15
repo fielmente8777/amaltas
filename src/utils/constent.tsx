@@ -9,15 +9,15 @@ Thank you!`);
 export const contact = {
   email: "amaltasbythejunglediaries@gmail.com",
   mapUrl: "",
-  phone: ["+918868888494"],
+  phone: ["+919258214866 "],
   address: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
   addressLink: "",
   socialMedia: {
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com/",
   },
-  callCta: `tel:+918868888494`,
-  WhatsappCta: `https://wa.me/+918868888494?text=${enCodeText}`,
+  callCta: `tel:+919258214866`,
+  WhatsappCta: `https://wa.me/+919258214866?text=${enCodeText}`,
   formDomain: "Amaltas",
   formHid: "",
 };

@@ -11,7 +11,7 @@ function Call({ callNumber }: { callNumber: string | string[] }) {
     return null;
   }
   const rawNumber = Array.isArray(callNumber) ? callNumber[0] || "" : (callNumber || "");
-  const formattedNumber = rawNumber || "+918868888494";
+  const formattedNumber = rawNumber || "+919258214866";
 
   return (
     <div
