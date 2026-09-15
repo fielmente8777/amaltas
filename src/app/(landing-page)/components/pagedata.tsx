@@ -243,7 +243,7 @@ export const landingPageData = {
   },
   contact: {
     location: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
-    phone: "+91 88688 88494",
+    phone: "+91 92582 14866",
     email: "demo@gmail.com",
     copyright: "© 2026 AMALTAS. All rights reserved. Powered by Fielmente",
   },
