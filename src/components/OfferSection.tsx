@@ -25,7 +25,7 @@ const OfferSection = () => {
 
   return (
     <div
-      className={`bg-[#30402A] py-1.5 w-full z-50 transition-all duration-300 ease-in-out border-b border-[#B58A4A]/30 ${isFixed
+      className={`bg-[#30402A] max_screen_width py-1.5 w-full z-50 transition-all duration-300 ease-in-out border-b border-[#B58A4A]/30 ${isFixed
           ? "fixed top-0 left-0 right-0 w-full shadow-md animate-offer-slide"
           : "relative w-full"
         }`}

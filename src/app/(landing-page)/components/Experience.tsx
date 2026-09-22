@@ -10,12 +10,13 @@ import SectionActionButtons from "@/src/components/buttons/SectionActionButtons"
 import { contact } from "@/src/utils/constent";
 
 import type { Swiper as SwiperType } from "swiper";
+import { Section } from "@/src/components/sectionComponants";
 
 export const Experience: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = React.useState<SwiperType | null>(null);
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-20 border-b border-[#D6D2C7]">
+    <Section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-20 border-b border-[#D6D2C7]">
       {/* Section Header */}
       <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 max-w-3xl mx-auto px-4 sm:px-6 mb-4 sm:mb-8 md:mb-12">
         <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
@@ -100,7 +101,7 @@ export const Experience: React.FC = () => {
 
       {/* Global Section CTAs */}
       <SectionActionButtons section="Experiences" className="justify-center pt-5 sm:pt-10 px-4 sm:px-6" />
-    </section>
+    </Section>
   );
 };
 

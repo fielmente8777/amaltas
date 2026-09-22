@@ -13,6 +13,7 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
+import { Section } from "@/src/components/sectionComponants";
 
 export const Gallery: React.FC = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -20,7 +21,7 @@ export const Gallery: React.FC = () => {
   const images = landingPageData.gallery.images;
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
+    <Section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
       <div className="max-w-[1320px] mx-auto space-y-4 sm:space-y-8 md:space-y-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto flex flex-col items-center">
@@ -113,7 +114,7 @@ export const Gallery: React.FC = () => {
         {/* SECTION CTAS DIRECTLY BELOW CAROUSEL */}
         <SectionActionButtons section="Gallery" className="justify-center pt-1 sm:pt-4" />
       </div>
-    </section>
+    </Section>
   );
 };
 

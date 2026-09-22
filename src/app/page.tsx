@@ -17,8 +17,8 @@ import { LandingFooter } from "./(landing-page)/components/LandingFooter";
 
 export default function LandingPage() {
   return (
-    <div className="w-full bg-[#EEEEDC] min-h-screen flex justify-center">
-      <main className="min-h-screen bg-[#EEEEDC] text-[#192118] font-sans flex flex-col w-full  mx-auto overflow-x-hidden">
+
+      <main className="">
         {/* 1. Top Offer Announcement Bar */}
         <OfferSection />
 
@@ -57,6 +57,5 @@ export default function LandingPage() {
         <Reviews />
         <LandingFooter />
       </main>
-      </div>
   );
 }

@@ -8,6 +8,7 @@ import {
   Manrope,
 } from "next/font/google";
 import "./globals.css";
+import "./style.scss";
 import Script from "next/script";
 import { WebProvider } from "../context-api/WebContext";
 import PopUpForm from "../components/pop-up/PopUpForm";
@@ -85,7 +86,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className="min-h-full flex flex-col font-sans bg-[#EEEEDC] text-[#5F6764]">
+      <body>
         <WebProvider>
           {children}
           <PopUpForm />

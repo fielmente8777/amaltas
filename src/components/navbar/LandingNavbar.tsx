@@ -13,8 +13,8 @@ const LandingNavbar = () => {
   }
 
   return (
-    <header className="w-full bg-[#EEEEDC] border-b border-[#D6D2C7]">
-      <div className="w-full px-4 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between py-1 sm:py-0">
+    <header className="bg-[#EEEEDC] max_screen_width border-b border-[#D6D2C7]">
+      <div className="px-4 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between py-1 sm:py-0">
 
         <div className="relative w-[68px] h-[74px] sm:w-[79px] sm:h-[86px] shrink-0 flex items-center justify-center">
           <Image

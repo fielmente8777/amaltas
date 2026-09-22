@@ -8,7 +8,7 @@ import { FooterLocationIcon, PhoneIcon, EmailIcon } from "@/src/utils/icons";
 
 export const LandingFooter: React.FC = () => {
   return (
-    <footer className="w-full font-sans">
+    <footer className="w-full font-sans max_screen_width">
       {/* Dark Green Booking Form Banner Strip Above Footer */}
       <div id="booking-form" className="w-full bg-[#30402A] py-8 sm:py-10 md:py-16 px-4 sm:px-6 md:px-12 border-b border-[#B58A4A]/30">
         <div className="max-w-6xl mx-auto text-center space-y-3 sm:space-y-6">

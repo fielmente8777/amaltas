@@ -6,10 +6,11 @@ import { landingPageData } from "./pagedata";
 import { LocationPinIcon } from "@/src/utils/icons";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
 import LazyLoadedVideo from "@/src/components/Video/LazyLoadedVideo";
+import { Section } from "@/src/components/sectionComponants";
 
 export const Location: React.FC = () => {
   return (
-    <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
+    <Section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
       <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-10">
         {/* Mobile Header (visible on < lg) */}
         <div className="block lg:hidden space-y-2 sm:space-y-3 text-left">
@@ -63,7 +64,7 @@ export const Location: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

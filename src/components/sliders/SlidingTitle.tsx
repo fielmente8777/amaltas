@@ -18,7 +18,7 @@ export default function SlidingTitle({
 
   return (
     <div
-      className="relative overflow-hidden border-y border-[#D6D2C7] bg-[#EEEEDC] py-3.5 text-[#30402A] w-full font-sans text-xs md:text-sm font-semibold tracking-wider"
+      className="relative overflow-hidden max_screen_width border-y border-[#D6D2C7] bg-[#EEEEDC] py-3.5 text-[#30402A] font-sans text-xs md:text-sm font-semibold tracking-wider"
       aria-hidden={ariaHidden}
     >
       <div className="marquee-wrapper">

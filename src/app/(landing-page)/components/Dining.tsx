@@ -4,11 +4,12 @@ import React from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
+import { Section } from "@/src/components/sectionComponants";
 
 
 export const Dining: React.FC = () => {
   return (
-    <section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
+    <Section className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7]">
       <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-14">
         {/* Section Header */}
         <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 max-w-3xl mx-auto">
@@ -62,7 +63,7 @@ export const Dining: React.FC = () => {
         {/* Centered CTAs at Bottom */}
         <SectionActionButtons section="Dining" className="justify-center pt-1 sm:pt-4" />
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -11,12 +11,13 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import { Section } from "@/src/components/sectionComponants";
 
 export const Reviews: React.FC = () => {
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(null);
 
   return (
-    <section className="w-full bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7] overflow-hidden">
+    <Section className="w-full  bg-[#EEEEDC] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7] overflow-hidden">
       <div className="max-w-[1320px] mx-auto space-y-6 sm:space-y-8 md:space-y-12">
         {/* Section Header with MakeMyTrip Badge */}
         <div className="border-b border-[#D6D2C7]/40 pb-4 sm:pb-6 space-y-3 sm:space-y-4 md:space-y-6">
@@ -123,7 +124,7 @@ export const Reviews: React.FC = () => {
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

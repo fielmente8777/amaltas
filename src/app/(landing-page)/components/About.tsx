@@ -4,10 +4,11 @@ import React from "react";
 import Image from "next/image";
 import { landingPageData } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
+import { Section } from "@/src/components/sectionComponants";
 
 export const About: React.FC = () => {
   return (
-    <section className="relative w-full bg-[#EEEEDC] py-16 sm:py-20 md:py-28 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
+    <Section className="relative w-full bg-[#EEEEDC] py-16 sm:py-20 md:py-28 lg:py-32 px-6 sm:px-8 md:px-12 lg:px-16 border-b border-[#D6D2C7] overflow-hidden">
       {/* Top-Left Leaf Background Decoration */}
       <div className="absolute top-0 left-0 pointer-events-none select-none z-0 leading-none m-0 p-0 flex items-start justify-start">
         <Image
@@ -59,7 +60,7 @@ export const About: React.FC = () => {
           <SectionActionButtons section="About" compact className="flex lg:hidden pt-3 sm:pt-4 w-full" />
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

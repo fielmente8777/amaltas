@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { IoAdd, IoRemove } from "react-icons/io5";
 import { landingPageData } from "./pagedata";
 import SectionActionButtons from "@/src/components/buttons/SectionActionButtons";
+import { Section } from "@/src/components/sectionComponants";
 
 export const Faqs: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -13,7 +14,7 @@ export const Faqs: React.FC = () => {
   };
 
   return (
-    <section
+    <Section
       id="faqs"
       style={{ boxShadow: "0px 7px 29px 0px #64646F33" }}
       className="w-full bg-[#FDF9EE] py-8 sm:py-12 md:py-24 px-4 sm:px-6 md:px-12 border-b border-[#D6D2C7] relative z-10"
@@ -78,7 +79,7 @@ export const Faqs: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
