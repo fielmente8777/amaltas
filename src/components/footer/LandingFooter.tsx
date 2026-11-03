@@ -5,6 +5,7 @@ import Image from "next/image";
 import Form1 from "@/src/components/forms/Form1";
 import { landingPageData } from "@/src/app/(landing-page)/components/pagedata";
 import { FooterLocationIcon, PhoneIcon, EmailIcon } from "@/src/utils/icons";
+import { contact } from "@/src/utils/constent";
 
 export const LandingFooter: React.FC = () => {
   return (
@@ -78,10 +79,10 @@ export const LandingFooter: React.FC = () => {
                   <EmailIcon />
                 </span>
                 <a
-                  href={`mailto:${landingPageData.contact.email}`}
+                  href={`mailto:${contact.email}`}
                   className="hover:text-[#30402A] transition-colors"
                 >
-                  Email: {landingPageData.contact.email}
+                  Email: {contact.email}
                 </a>
               </div>
             </div>
