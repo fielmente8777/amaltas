@@ -1,14 +1,20 @@
 export const landingPageData = {
-  offer: [
-    "Direct Booking Offer: Save 15% + Free Breakfast",
-  ],
+  offer: ["Direct Booking Offer: Save 15% + Free Breakfast"],
   hero: {
     logo: "/logo-image1.png",
     tag: "AMALTAS BY JUNGLE DIARIES · JIM CORBETT",
-    title: "<span class=\"font-bold\">Leave the city behind.</span><br/><span class=\"font-normal\">Let the </span><span class=\"italic font-light\">forest</span><span class=\"font-normal\"> set the pace.</span>",
-    description: "A boutique villa on Dhela Road, built for a slower, more personal Corbett.",
-    benefits: "Save 15% when you book direct · Free cancellation on most dates*",
-    images: ["/banner/image1.jpg", "/banner/image2.jpg", "/banner/image3.jpg", "/banner/image4.jpg"],
+    title:
+      '<span class="font-bold">Leave the city behind.</span><br/><span class="font-normal">Let the </span><span class="italic font-light">forest</span><span class="font-normal"> set the pace.</span>',
+    description:
+      "A boutique villa on Dhela Road, built for a slower, more personal Corbett.",
+    benefits:
+      "Save 15% when you book direct · Free cancellation on most dates*",
+    images: [
+      "/banner/image1.jpg",
+      "/banner/image2.jpg",
+      "/banner/image3.jpg",
+      "/banner/image4.jpg",
+    ],
   },
   step: [
     { title: "FOREST VIEWS" },
@@ -29,13 +35,15 @@ export const landingPageData = {
   accommodation: {
     tag: "ONE ACCOMMODATION",
     heading: "Six Rooms, Each Named For<br />The Forest It Faces.",
-    subtext: "A compact inventory on purpose, fewer guests, more<br class=\"hidden lg:inline\" /> attention, and rooms that stay quiet.",
+    subtext:
+      'A compact inventory on purpose, fewer guests, more<br class="hidden lg:inline" /> attention, and rooms that stay quiet.',
     rooms: [
       {
         id: "room-01",
         tag: "ROOM 01 · PRIVATE BALCONY",
         title: "Bijrani Room",
-        description: "A quiet room that opens onto its own balcony, morning tea with birdsong, evenings with the forest going dark.",
+        description:
+          "A quiet room that opens onto its own balcony, morning tea with birdsong, evenings with the forest going dark.",
         features: ["King bed", "Private balcony", "Forest side"],
         image: "/rooms/b-room1.jpg",
         images: [
@@ -49,7 +57,8 @@ export const landingPageData = {
         id: "room-02",
         tag: "ROOM 02 · JUNGLE-FACING WINDOW",
         title: "Durgadevi Room",
-        description: "Named for the zone beyond the river. One wide window frames the jungle, no screen competes with it.",
+        description:
+          "Named for the zone beyond the river. One wide window frames the jungle, no screen competes with it.",
         features: ["King bed", "Jungle-facing window", "Reading corner"],
         image: "/rooms/du-room1.jpg",
         images: [
@@ -62,7 +71,8 @@ export const landingPageData = {
         id: "room-03",
         tag: "ROOM 03 · FOREST DECK",
         title: "Dhikala Room",
-        description: "Expansive suite with panoramic views of the sal forest. Designed for peaceful retreats and slow mornings.",
+        description:
+          "Expansive suite with panoramic views of the sal forest. Designed for peaceful retreats and slow mornings.",
         features: ["King bed", "Forest deck", "Panoramic view"],
         image: "/rooms/d-room1.jpg",
         images: [
@@ -76,25 +86,21 @@ export const landingPageData = {
         id: "room-04",
         tag: "ROOM 04 · CANOPY VIEW",
         title: "Sitabani Room",
-        description: "Framed by ancient forest canopy, a peaceful sanctuary with natural light and serene atmosphere.",
+        description:
+          "Framed by ancient forest canopy, a peaceful sanctuary with natural light and serene atmosphere.",
         features: ["King bed", "Canopy view", "Lounge seating"],
         image: "/rooms/s-room1.jpeg",
-        images: [
-          "/rooms/s-room1.jpeg",
-          "/rooms/s-room2.jpeg",
-        ],
+        images: ["/rooms/s-room1.jpeg", "/rooms/s-room2.jpeg"],
       },
       {
         id: "room-05",
         tag: "ROOM 05 · GARDEN PATIO",
         title: "Jhirna Room",
-        description: "Ground-level suite opening directly onto lush private garden space, ideal for quiet reading and tea.",
+        description:
+          "Ground-level suite opening directly onto lush private garden space, ideal for quiet reading and tea.",
         features: ["King bed", "Garden patio", "Private entrance"],
         image: "/rooms/j-room1.jpeg",
-        images: [
-          "/rooms/j-room1.jpeg",
-          "/rooms/j-room2.jpeg",
-        ],
+        images: ["/rooms/j-room1.jpeg", "/rooms/j-room2.jpeg"],
       },
     ],
   },
@@ -131,11 +137,13 @@ export const landingPageData = {
     items: [
       {
         title: "Wild Breakfast",
-        description: "Breakfast served among the greenery, natural sounds<br class=\"hidden lg:inline\" /> included.",
+        description:
+          'Breakfast served among the greenery, natural sounds<br class="hidden lg:inline" /> included.',
       },
       {
         title: "The Dining Room",
-        description: "Twelve seats, one long table, Kumaoni-leaning home<br class=\"hidden lg:inline\" /> cooking.",
+        description:
+          'Twelve seats, one long table, Kumaoni-leaning home<br class="hidden lg:inline" /> cooking.',
       },
       {
         title: "Couple's Private Dining",
@@ -143,7 +151,8 @@ export const landingPageData = {
       },
       {
         title: "Bonfire Dinners",
-        description: "Winter evenings around the fire, dinner courses at bonfire<br class=\"hidden lg:inline\" /> pace.",
+        description:
+          'Winter evenings around the fire, dinner courses at bonfire<br class="hidden lg:inline" /> pace.',
       },
     ],
   },
@@ -162,8 +171,11 @@ export const landingPageData = {
   },
   location: {
     tag: "LOCATION",
-    heading: "Close To The Gate, Far From The Noise.",
-    address: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
+    heading:
+      "<strong>No Mechanical Roar</strong><br />Close to Jim Corbett Safari Gates – Dhela & Jhirna Zones",
+    // heading: "Close To The Gate, Far From The Noise.",
+    address:
+      "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
     matrix: [
       { place: "Dhela safari gate", distance: "≈ 7 km" },
       { place: "Ramnagar railway station", distance: "≈ 12 km" },
@@ -210,39 +222,46 @@ export const landingPageData = {
     badge: "MakeMyTrip Verified",
     testimonials: [
       {
-        quote: "Small, quiet, and looked after. The staff arranged our safari and the bonfire evening was the highlight of the trip.",
+        quote:
+          "Small, quiet, and looked after. The staff arranged our safari and the bonfire evening was the highlight of the trip.",
         author: "Priyanka & Arjun",
         type: "COUPLE · DELHI",
       },
       {
-        quote: "An unforgettable forest getaway! The rooms frame the jungle beautifully, and the food feels like home.",
+        quote:
+          "An unforgettable forest getaway! The rooms frame the jungle beautifully, and the food feels like home.",
         author: "Rohan & Family",
         type: "FAMILY · CHANDIGARH",
       },
       {
-        quote: "Peaceful atmosphere, warm hospitality, and perfect location near Dhela gate. Highly recommended!",
+        quote:
+          "Peaceful atmosphere, warm hospitality, and perfect location near Dhela gate. Highly recommended!",
         author: "Vikram & Friends",
         type: "GROUP · GURUGRAM",
       },
       {
-        quote: "The attention to detail, tranquil surroundings, and personalized hospitality made our holiday truly special.",
+        quote:
+          "The attention to detail, tranquil surroundings, and personalized hospitality made our holiday truly special.",
         author: "Ananya & Kabir",
         type: "COUPLE · NOIDA",
       },
       {
-        quote: "Delicious authentic Kumaoni meals and peaceful morning walks in nature right by our villa. A hidden gem!",
+        quote:
+          "Delicious authentic Kumaoni meals and peaceful morning walks in nature right by our villa. A hidden gem!",
         author: "Meera & Rajesh",
         type: "FAMILY · JAIPUR",
       },
       {
-        quote: "Exceptional service, immaculate rooms, and great proximity to Jim Corbett safari zones. We will definitely return.",
+        quote:
+          "Exceptional service, immaculate rooms, and great proximity to Jim Corbett safari zones. We will definitely return.",
         author: "Siddharth & Friends",
         type: "GROUP · MUMBAI",
       },
     ],
   },
   contact: {
-    location: "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
+    location:
+      "Himmatpur Dotiyal, Dhela Road, Ramnagar, Jim Corbett, Uttarakhand",
     phone: "+91 92582 14866",
     email: "demo@gmail.com",
     copyright: "© 2026 AMALTAS. All rights reserved. Powered by Fielmente",

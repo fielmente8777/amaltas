@@ -17,9 +17,12 @@ export const Location: React.FC = () => {
           <p className="text-[14px] sm:text-[16px] uppercase tracking-widest text-[#B58A4A] font-medium font-dm-sans">
             {landingPageData.location.tag}
           </p>
-          <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight">
-            {landingPageData.location.heading}
-          </h2>
+          <h2
+            className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight"
+            dangerouslySetInnerHTML={{
+              __html: landingPageData.location.heading,
+            }}
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-center">
@@ -30,22 +33,36 @@ export const Location: React.FC = () => {
                 {landingPageData.location.tag}
               </p>
 
-              <h2 className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight">
-                {landingPageData.location.heading}
-              </h2>
+              <h2
+                className="heading-h2 font-varela text-2xl sm:text-4xl lg:text-5xl text-[#30402A] leading-tight"
+                dangerouslySetInnerHTML={{
+                  __html: landingPageData.location.heading,
+                }}
+              />
             </div>
 
             <div className="flex items-center gap-2 text-sm sm:text-[18px] text-[#6B635E] font-dm-sans pt-1 lg:pt-0">
-              <span className="shrink-0"><LocationPinIcon /></span>
-              <p className="whitespace-normal md:whitespace-nowrap">{landingPageData.location.address}</p>
+              <span className="shrink-0">
+                <LocationPinIcon />
+              </span>
+              <p className="whitespace-normal md:whitespace-nowrap">
+                {landingPageData.location.address}
+              </p>
             </div>
 
             {/* Distance Matrix Table (No Icons, Clean Horizontal Border Dividers) */}
             <div className="border-y divide-y border-[#D6D2C7] divide-[#D6D2C7] text-[14px] font-manrope">
               {landingPageData.location.matrix.map((row, idx) => (
-                <div key={idx} className="flex items-center justify-between py-2 sm:py-3.5">
-                  <span className="text-[#6B635E] font-normal">{row.place}</span>
-                  <span className="text-[#30402A] font-medium">{row.distance}</span>
+                <div
+                  key={idx}
+                  className="flex items-center justify-between py-2 sm:py-3.5"
+                >
+                  <span className="text-[#6B635E] font-normal">
+                    {row.place}
+                  </span>
+                  <span className="text-[#30402A] font-medium">
+                    {row.distance}
+                  </span>
                 </div>
               ))}
             </div>
@@ -58,7 +75,9 @@ export const Location: React.FC = () => {
           <div className="order-1 lg:order-2 lg:col-span-6 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[648px] h-[240px] sm:h-[420px] lg:h-[600px] rounded-[8px] overflow-hidden shadow-lg border border-[#D6D2C7]">
               <LazyLoadedVideo
-                src={landingPageData.location.video?.src || "/location-video.mp4"}
+                src={
+                  landingPageData.location.video?.src || "/location-video.mp4"
+                }
               />
             </div>
           </div>
