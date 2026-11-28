@@ -7,7 +7,9 @@ Planning files for Amaltas Villa by Jungle Diaries ad campaigns. Nothing in this
 
 ## Google Search Ads — December 2026
 
-Campaign: `AMV_Search_CorbettVilla_Dec2026` · Status: Yet to launch · 1 – 31 Dec 2026 · ₹500/day (≈ ₹15,500 for the flight)
+Campaign: `AMV_Search_CorbettVilla_Dec2026` · Status: **built in Google Ads, paused** (28 Nov 2026) · 1 – 31 Dec 2026 · ₹500/day (≈ ₹15,500 for the flight)
+
+**Where it is:** Google Ads account Amaltas (857-844-6846, under the Eazotel manager account), campaign ID 24287553106. It's the old paused `Leads-Search_23/09/26` campaign, rebuilt and renamed so its history is kept. The old `Ad group 1` is paused and the old sitelinks/callouts are unlinked (still in the asset library). The call asset, WhatsApp message asset and 15% promotion were kept.
 
 | Ad group | What it covers |
 |---|---|
@@ -19,11 +21,13 @@ Campaign: `AMV_Search_CorbettVilla_Dec2026` · Status: Yet to launch · 1 – 31
 - Objective: leads (WhatsApp clicks, form submits on `/thank-you/`, calls). Landing page: https://amaltasvilla.com/
 - Phrase and exact match only, 54 campaign negatives, Presence-only location targeting (Delhi NCR first, then Chandigarh tricity, Dehradun, Meerut, Moradabad, Bareilly, Lucknow).
 - Each ad group has one responsive search ad: 10 shared headlines + 5 ad-group headlines, and 4 shared descriptions. The Ad Copy tab checks every line against Google's character limits.
-- Bidding: Maximize Clicks with a ₹30 max CPC to start, then Maximize Conversions after about 15 conversions in 30 days.
+- Bidding: Maximize Clicks with a ₹45 max CPC to start (the old campaign paid ≈ ₹43/click in Oct 2026), then Maximize Conversions after about 15 conversions in 30 days.
 - Kept apart from the Destinn Dhela campaign (`DHR_Search_CorbettStay_Nov2026`): its Dhela-zone and "resort in jim corbett" keywords are left out here, and destinn / destin are negatives.
 
 ### Before launch
 
+- [ ] **Billing:** the account's payment method can't be charged and the balance is overdue. Nothing runs until this is fixed.
+- [ ] Check the stray draft `Destinn Dhela | Search | Nov 2026` sitting in the Amaltas account.
 - [ ] Conversion tracking: GTM (GTM-P45R5SQ3) and GA4 (G-EDV333KPWB) are on the site, but no Google Ads tag. Track WhatsApp clicks, form submits and call clicks.
 - [ ] Add `id="rooms"`, `id="experiences"` and `id="dining"` to those homepage sections, for the sitelinks.
 - [ ] Confirm the reservations number: +91 92582 14866 (footer, buttons) vs +91 88688 88494 (FAQ).
